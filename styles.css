@@ -1,0 +1,46 @@
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: serif, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+}
+:root{
+  --white: #F5F6F1;
+  --blue: #77A8AC;
+  --black: #0F1F1E;
+  --mb-font-headers-biggest: 1.75rem;  
+  --mb-font-headers: 1.313rem;
+  --mb-font-text-bigger: 1rem;
+  --mb-font-text: 0.75rem;
+}
+
+/* ----- HOME -----*/
+
+.header{
+  height: 111px;
+  width: 100%;
+  background: var(--blue);
+  box-sizing: 2px 4px 4px(0,0,0, 0.25);
+}
+.logo_text{
+  color: var(--white);
+  font-size: var(--mb-font-text-bigger);
+}
+.logo_container{
+  display: flex;
+  align-items: center;
+}
+
+
+
+nav a{
+  color: var(--black);
+  font-size: var(--mb-font-headers);
+}
+nav ul li{
+  text-decoration: none;
+}
