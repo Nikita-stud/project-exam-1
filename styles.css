@@ -1,7 +1,7 @@
 *{
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: serif, Arial, Helvetica, sans-serif;
+  font-family: sans-serif, Arial, Helvetica,;
   text-decoration: none;
   list-style: none;
   margin: 0;
@@ -16,14 +16,20 @@
   --mb-font-headers: 1.313rem;
   --mb-font-text-bigger: 1rem;
   --mb-font-text: 0.75rem;
+
+  --dk-font-headers: 2.313rem;
+  --font-normal: "Lato", sans-serif, Arial;
+  --font-readable: sans-serif;
 }
+
+
 
 /* ----- HOME -----*/
 .header{
   height: 111px;
   width: 100%;
   background: var(--blue);
-  box-sizing: 2px 4px 4px(0,0,0, 0.25);
+  box-shadow: rgba(99, 99, 111, 0.2) 2px 7px 18px 0px;
   position: fixed;
 }
 .header.scrolled{
@@ -34,8 +40,10 @@
   display: flex;
   align-items: center;
   padding: 30px 0 0 20px;
+  transition: all 0.25s;
 }
 .logo_text{
+  font-family: var(--font-normal);
   color: var(--white);
   font-size: var(--mb-font-text-bigger);
 }
@@ -47,26 +55,42 @@
 nav{
   width: 323px;
   height: 311px;
+  position: relative;
+}
+nav.scrolled{
+  background: rgb(245, 246, 241, 0.7);
+  transition: all 0.5s;
 }
 .header_nav{
   padding-top: 36px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  float: right;
   transform: translateY(-200%);
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 nav a{
   color: var(--black);
   font-size: var(--mb-font-headers);
-  padding: 40px;
+  margin: 20px;
 }
 nav ul li{
   text-decoration: none;
   background-color: var(--white);
   padding: 20px;
+  font-family: var(--font-readable);
 }
+nav ul li:hover{
+  text-decoration: underline;
+}
+
+.nav-selected{
+  margin-top: -10px;
+  width: 10px;
+  height: 40px;
+  background-color: var(--black);
+  position: absolute;
+  left: 0px;
+}
+
 .showMenu{
   transform: translate(0);
 }
@@ -92,9 +116,23 @@ nav ul li{
 
 @media (min-width:834px){
   /* ----- HOME -----*/
-  /* nav{
+  .logo_container{
+    padding: 15px 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .logo{
+    width: 80px;
+    height: 80px;
+  }
+  .logo_text{
+    margin-left: 17px;
+    font-size: var(--dk-font-headers);
+  }
+  nav{
     display: none;
-  } */
+   }
 
 }
 

@@ -7,6 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
   <script src="https://kit.fontawesome.com/54f19440a6.js" crossorigin="anonymous"></script>
   <link href="styles.css" rel="stylesheet">
   <script defer src="js/index.js" type="module"></script>
@@ -20,7 +24,7 @@
     <section class="header">
       <div>
         <a href="index.html" class="logo_container">
-          <img src="pictures/logo-mobile.png" alt="Logo of the Page">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
           <p class="logo_text">The Traveler Blog</p>
         </a>
       </div>
@@ -32,7 +36,7 @@
 
       <nav id="header_nav" class="header_nav">
         <ul>
-          <li><a class="navItem" href="index.html">HOME <i class="fa-solid fa-house"></i></a></li>
+          <li><div class="nav-selected"></div><a class="navItem" href="index.html">HOME <i class="fa-solid fa-house"></i></a></li>
           <li><a class="navItem" href="list-of-posts.html">POSTS <i class="fa-solid fa-newspaper"></i></a></li>
           <li><a class="navItem" href="about.html">ABOUT US <i class="fa-solid fa-book"></i></a></li>
           <li><a class="navItem" href="contact.html">CONTACT US <i class="fa-solid fa-phone"></i></a></li>
