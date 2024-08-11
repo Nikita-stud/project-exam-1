@@ -11,7 +11,8 @@ function index(){
 
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
-    
+
+
   }catch(error){
 
   }
