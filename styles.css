@@ -15,23 +15,45 @@
   --yellow: rgb(246, 240, 231);
   --mb-font-headers-biggest: 1.75rem;  
   --mb-font-headers: 1.313rem;
-  --mb-font-text-bigger: 1rem;
-  --mb-font-text: 0.75rem;
+  --mb-font-text: 1rem;
 
-  --dk-font-text: 1.313rem;
+  --dk-font-headers-biggest: 2.313rem;
   --dk-font-headers: 1.75rem;
+  --dk-font-text: 1.313rem;
   --font-normal: "Lato", sans-serif, Arial;
   --font-readable: sans-serif;
 }
-
+main,header{
+  background-color: var(--white);
+}
+h1{
+  font-size: var(--mb-font-headers-biggest);
+}
+h2,h3,h4,h5{
+  font-size: var(--mb-font-headers);
+  display: grid;
+  align-items: center;
+}
+p{
+  font-size: var(--mb-font-text);
+}
+h1,h2,h3,h4,h5{
+  font-family: var(--font-normal);
+}
+p{
+  font-family: var(--font-readable);
+}
 /* ----- Header -----*/
-
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 .header{
   height: 111px;
   width: 100%;
   background: var(--blue);
   box-shadow: rgba(99, 99, 111, 0.2) 2px 7px 18px 0px;
-  position: fixed;
 }
 .header.scrolled{
   background: rgba(119, 168, 172, 0.9);
@@ -63,7 +85,8 @@ nav{
 .header_nav{
   margin-top: 60px;
   padding-top: 36px;
-  float: right;
+  position: absolute;
+  right: 0px;
   transform: translateY(-200%);
   transition: all 0.2s;
 }
@@ -142,7 +165,6 @@ nav ul li:hover{
 /* ----- Footer -----*/
 
 .footer_container{
-  margin-top: 30px;
   box-shadow: 0px -18px 10px -20px rgba(0,0,0,0.5);
   height: 279px;
   width: 100%;
@@ -171,9 +193,76 @@ nav ul li:hover{
 
 
 
+
+/* ----- About Us Page -----*/
+.img_container{
+  padding-top: 25px;
+  background-color: var(--white);
+}
+.about-img{
+  display: grid;
+  margin: 0px auto 0 auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 25px;
+}
+.about_container{
+  padding: 0 25px 25px 25px;
+}
+.about_container p{
+ padding-bottom: 8px;
+}
+.about-h1{
+  padding: 18px 0px 8px 0px;
+}
+.about-other-headers{
+  padding: 18px 0px 0px 0px;
+  margin-bottom: 8px;
+}
+.about-icon{
+  font-size: 0.5rem;
+  margin: 5px 5px;
+  vertical-align: top;
+}
+.about-text-strong{
+  line-height: 50px;
+  font-size: 1.1rem;
+}
+.about-us_text-hidden{
+  display: none;
+}
+
+
+
 /* ----------------------------Media-Queries---------------------------- */
 
 @media (min-width:834px){
+  h1{
+    font-size: var(--dk-font-headers-biggest);
+  }
+  h2,h3,h4,h5{
+    font-size: var(--dk-font-headers);
+  }
+  p{
+    font-size: var(--dk-font-text);
+  }
+  h2::after,h3::after,h4::after,h5::after{
+    position: absolute;
+    background-color: var(--black);
+    content: "";
+    height: 1.2px;
+    right: 0px;
+    left: 0px;
+    vertical-align: middle;
+  }
+  .header-span{
+    background-color: var(--white);
+    display: inline-flex;
+    flex-wrap: nowrap;
+    z-index: 3;
+  }
+
+
   /* ----- HOME -----*/
   .logo_container{
     padding: 15px 50px;
@@ -216,11 +305,99 @@ nav ul li:hover{
   margin-right: 30px;
 }
 .footer-logo_container{ 
-  margin-top: 50px;
+  padding-top: 35px;
 }
 
 
+
+
+
+
+
+
+
+/* ----- About Us Page -----*/
+.about-img{
+  margin: -10px 0 0 0;
+  float: left;
+  width: 430px;
+  height: 550px;
+  padding: 0 50px 0 0px;
 }
+.about_container{
+  margin-top: 0px;
+  padding: 30px 50px 32px 50px;
+}
+.about-us_container{
+  display: flex;
+}
+.about-us_text{
+  display: flex;
+  flex-direction: column;
+}
+.about_container p{
+  padding-bottom: 17px;
+}
+.about-h1{
+  display: grid;
+  align-items: center;
+  padding: 10px 0px 17px 0px;
+}
+.header-span{
+  background-color: var(--white);
+  width: 170px;
+  z-index: 3;
+}
+.about-h1::after{
+  position: absolute;
+  z-index: 2;
+  background-color: var(--black);
+  content: "";
+  height: 1.2px;
+  right: 0px;
+  left: 530px;
+  vertical-align: middle;
+}
+.about-other-headers{
+  padding: 27px 0px 17px 0px;
+  margin-bottom: 17px;
+}
+.about-text-strong{
+  font-size: 1.4rem;
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -229,6 +406,20 @@ nav ul li:hover{
 
 @media (min-width:1280px){
   /* ----- HOME -----*/
+
+
+
+  /* ----- About Us Page -----*/
+.about-img{
+  width: 530px;
+  height: 700px;
+}
+.about-us_text-hidden{
+  display: block;
+}
+.about-us_text{
+  justify-content: space-around;
+}
 
 
 }
