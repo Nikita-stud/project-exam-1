@@ -225,7 +225,7 @@ nav ul li:hover{
   display: none;
 }
 .contact-paragraph{
-  margin: 18px 0 38px 0;
+  margin: 18px 0 28px 0;
 }
 form > *{
   display: flex;
@@ -234,13 +234,16 @@ form > *{
 .input{
   cursor: pointer;
   border: 0;
-  border-bottom:  solid var(--black);
+  border-bottom: 3px solid var(--black);
   background-color: var(--white);
   min-width: 250px;
   max-width: 400px;
   height: 20px;
   padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+}
+.input:hover{
+  border-bottom:  3px solid #072d2d;
 }
 .input:focus{
   outline: none;
@@ -250,13 +253,16 @@ label{
   font-family: var(--font-normal);
 }
 .name{
-  max-width: 250px;
+  max-width: 175px;
 }
 .email{
-  max-width: 325px;
+  max-width: 300px;
+}
+.subject{
+  max-width: 350px;
 }
 .cta-send{
-  margin-top: 25px;
+  margin: 25px 0;
   background-color: var(--yellow);
   height: 70px;
   width: 100%;
@@ -267,6 +273,9 @@ label{
   border: none;
   font-size: var(--mb-font-headers);
   box-shadow: 0 2px 5px #0f1f1e26, 0 -2px 5px #0f1f1e18;
+}
+.cta-send:hover{
+  background-color: rgb(236, 229, 219);
 }
 
 
