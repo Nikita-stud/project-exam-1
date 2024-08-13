@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>The Traveler Blog | Home Page</title>
-  <meta name="description" content="We who travel, we are never sure if the information we see online can be trusted. This ends now with the new travel blog made by travelers for travelers">
+  <title>The Traveler Blog | Contact Page</title>
+  <meta name="description" content="Contact us any time of the day, we are here to learn, teach and share what the world has to offer">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/54f19440a6.js" crossorigin="anonymous"></script>
   <link href="styles.css" rel="stylesheet">
+  <script defer src="js/index.js" type="module"></script>
 </head>
 
 
@@ -15,18 +21,91 @@
 <body>
   <header>
 
+    <section class="header">
+      <div>
+        <a href="index.html" class="logo_container">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
+          <p class="logo_text">The Traveler Blog</p>
+        </a>
+      </div>
+
+      <section class="cta-header_container">
+        <a href="index.html" class="cta-header"><i class="fa-solid fa-house"></i> HOME</a>
+        <a href="list-of-posts.html" class="cta-header"><i class="fa-solid fa-newspaper"></i> POSTS</a>
+      </section>
+      
+      <button class="hamburger">
+        <i class="icon-hamburger fa-solid fa-bars"></i>
+        <i class="icon-close fa-solid fa-xmark"></i>
+      </button>
+
+      <nav id="header_nav" class="header_nav">
+        <div class="triangle-nav"></div>
+        <ul>
+          <li><a class="navItem" href="index.html">HOME <i class="fa-solid fa-house"></i></a></li>
+          <li><a class="navItem" href="list-of-posts.html">POSTS <i class="fa-solid fa-newspaper"></i></a></li>
+          <li><a class="navItem" href="about.html">ABOUT US <i class="fa-solid fa-book"></i></a></li>
+          <li><div class="nav-selected"></div><a class="navItem" href="contact.html">CONTACT US <i class="fa-solid fa-phone"></i></a></li>
+        </ul>
+      </nav>
+    </section>
+
   </header>
 
 
   
   <main>
+    <section class="contact_container">
 
+      <div class="contact-img_container">
+        <img src="/pictures/contact.jpg" class="contact_img" alt="picture of Matt and John from our team at The Traveler Blog">
+      </div>
+      <div class="contact_text">
+        <h1 class="about-h1"><span class="header-span">Contact US</span></h1>
+        <p class="contact-paragraph">We're here to help! Please reach out with any questions or inquiries.</p>
+
+        <div class="form_container">
+          <form action="" method="POST">
+            <div>
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="input name">
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email" class="input email">
+            </div>
+            <div>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="input">
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="input"></textarea>
+            </div>
+            <button class="cta-send">SEND IN</button>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
   </main>
 
 
 
   <footer>
-
+    <section class="footer_container">
+      <div class="footer-nav_container">
+        <a href="contact.html" class="footer-nav"><i class="fa-solid fa-phone"></i> CONTACTS US</a>
+        <a href="about.html" class="footer-nav"><i class="fa-solid fa-book"></i> ABOUT US</a>
+      </div>
+      <div class="footer-logo_container">
+        <a href="index.html" class="logo_container footer-logo_container">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
+          <p class="logo_text">The Traveler Blog</p>
+        </a>
+      </div>
+    </section>
   </footer>
 </body>
 </html>

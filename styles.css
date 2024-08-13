@@ -215,8 +215,59 @@ nav ul li:hover{
 .mobile-hidden::after{
   display: none;
 }
-
-
+/* ----- Contact Us Page -----*/
+.contact_container{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.contact-img_container{
+  display: none;
+}
+.contact-paragraph{
+  margin: 18px 0 38px 0;
+}
+form > *{
+  display: flex;
+  flex-direction: column;
+}
+.input{
+  cursor: pointer;
+  border: 0;
+  border-bottom:  solid var(--black);
+  background-color: var(--white);
+  min-width: 250px;
+  max-width: 400px;
+  height: 20px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.input:focus{
+  outline: none;
+}
+label{
+  font-size: var(--mb-font-headers);
+  font-family: var(--font-normal);
+}
+.name{
+  max-width: 250px;
+}
+.email{
+  max-width: 325px;
+}
+.cta-send{
+  margin-top: 25px;
+  background-color: var(--yellow);
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-size: var(--mb-font-headers);
+  box-shadow: 0 2px 5px #0f1f1e26, 0 -2px 5px #0f1f1e18;
+}
 
 
 
@@ -363,7 +414,18 @@ nav ul li:hover{
 .about-text-strong{
   font-size: 1.4rem;
 }
-
+/* ----- Contact Us Page -----*/
+.contact_container{
+  padding: 50px;
+  flex-direction: row;
+}
+.contact-img_container{
+  display: block;
+}
+.contact_img{
+  width: 300px;
+  height: 400px;
+}
 
 
 
