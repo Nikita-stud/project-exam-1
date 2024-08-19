@@ -429,11 +429,21 @@ label{
   flex-direction: row;
 }
 .contact-img_container{
+  margin-top: 15px;
   display: block;
 }
 .contact_img{
+  width: 100%;
+  min-height: 300px;
+  max-height: 505px;
+}
+.contact_text{
+  padding-left: 50px;
+}
+.cta-send{
+  margin: 25px 0;
+  height: 50px;
   width: 300px;
-  height: 400px;
 }
 
 
