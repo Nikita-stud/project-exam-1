@@ -1,8 +1,13 @@
+import { url } from "./constants/constant.js";
+import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
+import { fetchPosts } from "./api/fetchPosts.js";
+
+import { fetchPosts } from "./api/fetchPosts.js";
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 
-function index(){
+async function index(){
   try{
     window.addEventListener("scroll", handleScroll);
 
@@ -11,6 +16,14 @@ function index(){
 
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
+
+
+    const fetched = await fetch(url);
+    const results = await fetched.json();
+    const posts = results;
+
+    fetchTodaysPosts(posts);
+    fetchPosts(posts);
 
 
   }catch(error){
