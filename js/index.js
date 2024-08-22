@@ -1,8 +1,7 @@
 import { url } from "./constants/constant.js";
 import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
-import { fetchPosts } from "./api/fetchPosts.js";
+// import { fetchPosts } from "./api/fetchPosts.js";
 
-import { fetchPosts } from "./api/fetchPosts.js";
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
@@ -21,9 +20,11 @@ async function index(){
     const fetched = await fetch(url);
     const results = await fetched.json();
     const posts = results;
+    
+    //  console.dir(posts)
 
     fetchTodaysPosts(posts);
-    fetchPosts(posts);
+    // fetchPosts(posts);
 
 
   }catch(error){
