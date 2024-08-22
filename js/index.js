@@ -1,6 +1,6 @@
-import { handleScroll } from "./handleScroll.js";
-import { handleWidth } from "./handleWidth.js";
-import { toggleHamburger } from "./toggleHamburger.js";
+import { handleScroll } from "./helper/events/handleScroll.js";
+import { handleWidth } from "./helper/events/handleWidth.js";
+import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 
 function index(){
   try{
