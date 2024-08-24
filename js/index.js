@@ -1,4 +1,5 @@
 import { url } from "./constants/constant.js";
+import { catchAndDisplay } from "./ui/catchAndDisplay.js";
 import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
 // import { fetchPosts } from "./api/fetchPosts.js";
 
@@ -28,7 +29,7 @@ async function index(){
 
 
   }catch(error){
-
+    catchAndDisplay()
   }
 };
 

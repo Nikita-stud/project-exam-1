@@ -13,6 +13,7 @@
   --blue: #77A8AC;
   --black: #0F1F1E;
   --yellow: rgb(246, 240, 231);
+  --loading-color:#dcdcdc;
   --mb-font-headers-biggest: 1.75rem;  
   --mb-font-headers: 1.313rem;
   --mb-font-text: 1rem;
@@ -43,8 +44,6 @@ h1,h2,h3,h4,h5{
 p{
   font-family: var(--font-readable);
 }
-
-
 
 
 /* ----- Header -----*/
@@ -162,26 +161,28 @@ nav ul li:hover{
   position: relative;
 }
 .post-of-today_img-container{
-  background-color: #072d2d;
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  height: 500px;
+  height: 300px;
 }
 .post-of-today_text-container{
+  height: 100%;
   padding: 25px;
   background-color: #fff;
   color: var(--black);
-  
+}
+.text{
+  font-family: var(--font-readable);
+  font-size: var(--mb-font-text);
+  padding: 18px 0;
+  max-height: 400px;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
 }
 .cta-read-more-desktop{
   display: none;
-}
-.cta-read-more-mobile{
-  width: 100%;
-  padding: 20px;
-  background-color: var(--yellow);
-  font-size: var(--mb-font-headers);
-  border: none;
-  bottom: 0;
 }
 
 
@@ -596,4 +597,59 @@ label{
 }
 .cta-header:hover{
   background-color: rgb(235, 228, 219);
+}
+.cta-read-more-mobile{
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--yellow);
+  font-size: var(--mb-font-headers);
+  border: none;
+  bottom: 0;
+}
+.cta-read-more-mobile:hover{
+  background-color: rgb(223, 216, 201);
+}
+
+
+
+
+
+
+/* ----- Animation-----*/
+.loading{
+  background-color: var(--loading-color);
+  background: linear-gradient(
+    120deg,
+    rgba(240,240,240, 0) 45%,
+    rgba(240,240,240, .67) 55%,
+    rgba(240,240,240, 0) 65%
+  ) var(--loading-color);
+  background-size: 250%, 100%;
+  animation: 1.5s loading linear infinite ;
+}
+.loading-title{
+  width: 40%;
+  height: 20px;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+.loading-text{
+  width: 100%;
+  height: 10px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+.loading-text:last-child{
+  width: 85%;
+  margin-bottom: 0px;
+}
+@keyframes loading {
+  0%{
+    background-position-x: 110% ;
+  }
+  100%{
+    background-position-x:0%;
+  }
 }
