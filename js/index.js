@@ -25,6 +25,7 @@ async function index(){
     //  console.dir(posts)
 
     fetchTodaysPosts(posts);
+    fetchLatestPosts(posts);
     // fetchPosts(posts);
 
 

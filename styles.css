@@ -14,6 +14,7 @@
   --black: #0F1F1E;
   --yellow: rgb(246, 240, 231);
   --loading-color:#dcdcdc;
+  --box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.352);
   --mb-font-headers-biggest: 1.75rem;  
   --mb-font-headers: 1.313rem;
   --mb-font-text: 1rem;
@@ -21,6 +22,10 @@
   --dk-font-headers-biggest: 2.313rem;
   --dk-font-headers: 1.75rem;
   --dk-font-text: 1.313rem;
+
+  --mb-font-poster-header: 1rem;
+  --mb-font-poster-text: 	0.825rem;
+
   --font-normal: "Lato", sans-serif, Arial;
   --font-readable: sans-serif;
 }
@@ -148,11 +153,7 @@ nav ul li:hover{
 .cta-header_container{
   display: none;
 }
-
-
-
-
-
+/* -----Todays Post-----*/
 .index-main-header{
   padding: 25px 0 0 25px;
 }
@@ -171,6 +172,7 @@ nav ul li:hover{
   padding: 25px;
   background-color: #fff;
   color: var(--black);
+  box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.352);
 }
 .text{
   font-family: var(--font-readable);
@@ -184,7 +186,53 @@ nav ul li:hover{
 .cta-read-more-desktop{
   display: none;
 }
+/* -----Latest Post-----*/
 
+.latest-posts-header{
+  padding: 25px;
+}
+.carousel_container{
+  height: 600px;
+  width: 100%;
+  background-color: #072d2d;
+}
+/* -----Posts Main Page-----*/
+.posts-main-page_container{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -----Posts General-----*/
+.post_container{
+  width: 280px;
+  height: 381px;
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: var(--black);
+}
+.post_img{
+  width: 100%;
+  height: 197px;
+  background-position: center;
+  background-repeat: none;
+  box-shadow: var(--box-shadow);
+}
+.post_title{
+  font-size: var(--mb-font-poster-header);
+  padding:8px 0;
+
+}
+.post_text{
+  font-size: var(--mb-font-poster-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 
 
@@ -600,13 +648,14 @@ label{
 }
 .cta-read-more-mobile{
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 18px;
   width: 100%;
   padding: 20px;
   background-color: var(--yellow);
   font-size: var(--mb-font-headers);
   border: none;
   bottom: 0;
+  box-shadow: var(--box-shadow);
 }
 .cta-read-more-mobile:hover{
   background-color: rgb(223, 216, 201);

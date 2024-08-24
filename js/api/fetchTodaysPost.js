@@ -22,16 +22,16 @@ export function fetchTodaysPosts(posts){
 
   const text = document.createElement("p");
   text.classList.add("text")
-  const allText = featuredFirstPost.content.rendered;
-  const onlyParagraphs = allText.querySelectorAll("p");
-  console.log(featuredFirstPost.content.rendered)
-  // let paragraphs = "";
+  const tempContainer = document.createElement("div");
+  tempContainer.innerHTML = featuredFirstPost.content.rendered;
+  const allText = tempContainer.querySelectorAll("p")
+  let paragraphs = "";
 
-  // onlyParagraphs.forEach(paragraph => {
-  //   paragraphs += paragraph.innerHTML + `<br>`;
-  // });
+  allText.forEach(paragraph => {
+    paragraphs += paragraph.innerHTML + `<br>`;
+  });
 
-  // text.innerHTML =  paragraphs;
+  text.innerHTML =  paragraphs;
 
   const button = document.createElement("button");
   button.classList.add("cta-read-more-mobile");
