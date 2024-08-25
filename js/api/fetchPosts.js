@@ -2,7 +2,9 @@ const container = document.getElementById("all-posts_container")
 
 export function fetchPosts(posts){
 
-  posts.forEach(post => {
+  let postsToRender = posts;
+
+  postsToRender.forEach(post => {
     
     const anchorTag = document.createElement("a");
 

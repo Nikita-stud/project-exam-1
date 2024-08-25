@@ -1,5 +1,9 @@
 const lastPostsButton = document.getElementById("last-page-cta")
+const search = document.getElementById("search");
 
 export function handlePostsForm(){
-  lastPostsButton.disabled ="true";
+
+  search.onkeyup = function(){
+    const messageLength = event.target.value.trim().toLowerCase();
+  }
 }
