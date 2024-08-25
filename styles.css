@@ -50,7 +50,6 @@ p{
   font-family: var(--font-readable);
 }
 
-
 /* ----- Header -----*/
 header{
   position: sticky;
@@ -254,8 +253,11 @@ nav ul li:hover{
 
 
 /* -----List Of Posts Page-----*/
+.list-of-posts-header{
+  display: none;
+}
 .form_container{
-  padding: 25px;
+  padding: 33px 25px 25px 25px;
 }
 .form-list-of-posts > *{
   display: flex;
@@ -273,24 +275,54 @@ nav ul li:hover{
   border: none;
   background-color: #fff;
   position: absolute;
-  top: 149px;
+  top: 157px;
   left: 45px;
   font-size: var(--mb-font-headers);
   color: var(--black);
 }
-.search-icon:hover{
-cursor: pointer;
+[type="checkbox"]{
+  opacity: 0;
 }
-.list-of-posts_checkboxes{
+[type="checkbox"] + label{
+  padding: 8px 0 0 40px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  color: var(--black);
+}
+[type="checkbox"] + label::before{
   width: 31px;
   height: 31px;
-  border-radius: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  border: 1px solid var(--black);
 }
+[type="checkbox"]:checked + label::after{
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: var(--black);
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 15px;
+  border: 1px solid var(--black);
+}
+[type="checkbox"]:checked + label{
+  font-weight: 900;
+}
+
 
 
 
 .all-posts_container{
+  padding: 0 25px;
   display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
   gap: 12px;
   place-items: center;
 }
@@ -489,7 +521,7 @@ label{
   p{
     font-size: var(--dk-font-text);
   }
-  h2::after,h3::after,h4::after,h5::after{
+  .lined-header::after{
     position: absolute;
     background-color: var(--black);
     content: "";
