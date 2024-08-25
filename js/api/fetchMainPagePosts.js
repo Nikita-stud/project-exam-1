@@ -1,6 +1,7 @@
-const container = document.getElementById("all-posts_container")
+const europeContainer = document.getElementById("posts-main-page_container-europe");
+const asiaContainer = document.getElementById("posts-main-page_container-europe");
 
-export function fetchPosts(posts){
+export function fetchMainPagePosts(posts){
 
   posts.forEach(post => {
     
@@ -13,7 +14,7 @@ export function fetchPosts(posts){
     const img = document.createElement("img");
     img.classList.add("post_img");
     const mediaImg = post._embedded[`wp:featuredmedia`][0];
-    img.src = `${mediaImg.media_details.sizes.full.source_url}`;
+    img.src = `url(${mediaImg.media_details.sizes.thumbnail.source_url})`;
     img.alt = `${mediaImg.alt_text}`;
 
     const title = document.createElement("h5");
@@ -38,7 +39,7 @@ export function fetchPosts(posts){
     readMore.classList.add("post-read-more");
     readMore.innerHTML = `Read More <i class="fa-solid fa-arrow-right"></i>`;
      
-    container.append(anchorTag);
+
     anchorTag.append(div);
     div.append(img);
     div.append(title);

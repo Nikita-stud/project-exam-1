@@ -7,7 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/54f19440a6.js" crossorigin="anonymous"></script>
   <link href="styles.css" rel="stylesheet">
+  <script defer src="js/list-of-posts.js" type="module"></script>
 </head>
 
 
@@ -15,18 +21,82 @@
 <body>
   <header>
 
+    <section class="header">
+      <div>
+        <a href="index.html" class="logo_container">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
+          <p class="logo_text">The Traveler Blog</p>
+        </a>
+      </div>
+
+      <section class="cta-header_container">
+        <a href="index.html" class="cta-header"><i class="fa-solid fa-house"></i> HOME</a>
+        <a href="list-of-posts.html" class="cta-header"><i class="fa-solid fa-newspaper"></i> POSTS</a>
+      </section>
+      
+      <button class="hamburger">
+        <i class="icon-hamburger fa-solid fa-bars"></i>
+        <i class="icon-close fa-solid fa-xmark"></i>
+      </button>
+
+      <nav id="header_nav" class="header_nav">
+        <div class="triangle-nav"></div>
+        <ul>
+          <li ><div class="nav-selected"></div><a class="navItem" href="index.html">HOME <i class="fa-solid fa-house"></i></a></li>
+          <li><a class="navItem" href="list-of-posts.html">POSTS <i class="fa-solid fa-newspaper"></i></a></li>
+          <li><a class="navItem" href="about.html">ABOUT US <i class="fa-solid fa-book"></i></a></li>
+          <li><a class="navItem" href="contact.html">CONTACT US <i class="fa-solid fa-phone"></i></a></li>
+        </ul>
+      </nav>
+    </section>
+
   </header>
 
 
   
   <main>
+    <section class="form_container">
+      <form action="" method="GET" class="form-list-of-posts">
+        <div>
+          <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" id="search" name="search" placeholder="Search" class="search-input">
+          <label for="search"></label>
+        </div>
+        <div>
+          <input type="checkbox" id="newest-to-oldest" name="newest-to-oldest" class="list-of-posts_checkboxes">
+          <label for="newest-to-oldest">Newest to Oldest</label>
+        </div>
+        <div>
+          <input type="checkbox" id="oldest-to-newest" name="oldest-to-newest" class="list-of-posts_checkboxes">
+          <label for="oldest-to-newest">Oldest to Newest</label>
+        </div>
+      </form>
+    </section>
 
+    <section class="all-posts_container" id="all-posts_container">
+    </section>
+
+    <section class="all-posts-cta_container">
+      <button class="all-posts-cta"><i class="fa-solid fa-chevron-left"></i> Last Page</button>
+      <button class="all-posts-cta">Next Page <i class="fa-solid fa-chevron-right"></i></button>
+    </section>
   </main>
 
 
 
   <footer>
-
+    <section class="footer_container">
+      <div class="footer-nav_container">
+        <a href="contact.html" class="footer-nav"><i class="fa-solid fa-phone"></i> CONTACTS US</a>
+        <a href="about.html" class="footer-nav"><i class="fa-solid fa-book"></i> ABOUT US</a>
+      </div>
+      <div class="footer-logo_container">
+        <a href="index.html" class="logo_container footer-logo_container">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
+          <p class="logo_text">The Traveler Blog</p>
+        </a>
+      </div>
+    </section>
   </footer>
 </body>
 </html>
