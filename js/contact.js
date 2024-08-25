@@ -1,13 +1,11 @@
-import { url } from "./constants/constant.js";
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
-import { fetchPosts } from "./api/fetchPosts.js";
+import { handleSubmitForm } from "./helper/events/handleSubmitForm.js";
 
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
-import { handlePostsForm } from "./helper/events/handlePostsForm.js";
 
-async function displayListPage(){
+async function index(){
   try{
     window.addEventListener("scroll", handleScroll);
 
@@ -17,18 +15,11 @@ async function displayListPage(){
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
 
-
-    const fetched = await fetch(url);
-    const results = await fetched.json();
-    const posts = results;
-    
-    handlePostsForm()
-    fetchPosts(posts)
-
+    handleSubmitForm();
 
   }catch(error){
     catchAndDisplay()
   }
 };
 
-displayListPage();
+index();
