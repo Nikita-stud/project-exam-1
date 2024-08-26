@@ -649,6 +649,105 @@ label{
   height: 50px;
   width: 300px;
 }
+  /* ----- Posts In General-----*/ 
+  .post_container{
+    width: 376px;
+    height: 427px;
+    padding: 10px;
+    background-color: var(--white);
+    box-shadow: none;
+  }
+  .post_img{
+    width: 100%;
+    height: 261px;
+    border-radius: 0px;
+  }
+  .post_title{
+    font-size: var(--dk-font-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding:4px 0 4px 0;
+  }
+  .post_text{
+    font-size: var(--mb-font-poster-header);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----List Of Posts Page-----*/
+.list-of-posts-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+.list-of-posts-header::after{
+  position: absolute;
+  z-index: 2;
+  background-color: var(--black);
+  content: "";
+  height: 1.2px;
+  right: 0px;
+  left: 0px;
+  vertical-align: middle;
+}
+.form_container{
+  padding: 33px 25px 25px 25px;
+  display: flex;
+  justify-content: center;
+}
+.checkbox_container{
+  float: left;
+}
+.search-input{
+  width: 359px;
+}
+.search-icon{
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+[type="checkbox"] + label{
+  padding: 8px 0 0 25px;
+  padding-right: 20px;
+}
+[type="checkbox"] + label::before{
+  left: -15px;
+  top: 12px;
+}
+[type="checkbox"]:checked + label::after{
+  left: -10px;
+  top: 17px;
+}
+
+
+.all-posts_container{
+  padding: 0 50px;
+  grid-template-columns: repeat(auto-fit,minmax(376px, 1fr));
+  gap: 25px;
+}
+.all-posts-cta_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 50px 100px 50px;
+}
+
 
 
 
@@ -703,6 +802,7 @@ label{
   .mobile-hidden::after{
     display: inline;
   }
+  
 }
 
 
