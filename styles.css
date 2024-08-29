@@ -196,11 +196,9 @@ nav ul li:hover{
   background-color: #072d2d;
 }
 /* -----Posts Main Page-----*/
-.posts-main-page_container{
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.location-header{
+  padding: 33px 25px;
+  font-size: var(--mb-font-headers);
 }
 
 /* -----Posts General-----*/
@@ -446,9 +444,19 @@ nav ul li:hover{
   padding: 15px;
   margin-bottom: 18px;
 }
-.input:hover{
-  border-bottom:  3px solid #072d2d;
+.error{
+  border-bottom:  3px solid #d02424;
 }
+.accept{
+  border-bottom:  3px solid #21d07e;
+}
+.error-text{
+  color: #d02424;
+  font-size: var(--mb-font-text);
+}
+/* .input:hover{
+  border-bottom:  3px solid #072d2d;
+} */
 .input:focus{
   outline: none;
 }
@@ -481,6 +489,7 @@ label{
 .cta-send:hover{
   background-color: rgb(236, 229, 219);
 }
+
 
 
 
