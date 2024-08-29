@@ -49,6 +49,9 @@ h1,h2,h3,h4,h5{
 p{
   font-family: var(--font-readable);
 }
+.delete{
+  opacity: 0;
+}
 
 /* ----- Header -----*/
 header{
@@ -185,18 +188,25 @@ nav ul li:hover{
 .cta-read-more-desktop{
   display: none;
 }
-/* -----Latest Post-----*/
-
-.latest-posts-header{
-  padding: 25px;
-}
+/* -----Carousel Main Page-----*/
 .carousel_container{
   height: 600px;
   width: 100%;
   background-color: #072d2d;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
+
+
+
+
+
+
+
+
 /* -----Posts Main Page-----*/
-.location-header{
+.index-headers{
   padding: 33px 25px;
   font-size: var(--mb-font-headers);
 }
@@ -583,7 +593,7 @@ label{
   display: none;
 }
 .post-of-today_container{
-  padding: 50px;
+  padding: 50px 50px 10px 50px;
   position: relative;
 }
 .post-of-today_img-container{
@@ -608,6 +618,11 @@ label{
 }
 .cta-read-more-mobile{
   display: none;
+}
+/* -----Posts Main Page-----*/
+.index-headers{
+  padding: 25px 50px;
+  font-size: var(--dk-font-headers);
 }
  /* ----- Footer -----*/
 .footer_container{
