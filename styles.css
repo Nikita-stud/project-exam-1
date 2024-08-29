@@ -200,6 +200,9 @@ nav ul li:hover{
   padding: 33px 25px;
   font-size: var(--mb-font-headers);
 }
+.container-asia{
+  margin-bottom: 33px;
+}
 
 /* -----Posts General-----*/
 .post_container{
@@ -575,8 +578,38 @@ label{
     align-items: center;
     margin-top: 40px;
   }
+/* -----Todays Post-----*/
+.index-main-header{
+  display: none;
+}
+.post-of-today_container{
+  padding: 50px;
+  position: relative;
+}
+.post-of-today_img-container{
+  background-size: cover;
+  background-position: center;
+  width: 80%;
+  height: 500px;
+}
+.post-of-today_text-container{
+  height: 410px;
+  padding: 25px;
+  width: 400px;
+  position: absolute;
+  top: 95px;
+  right: 50px;
+}
+.text{
+  font-size: var(--mb-font-text);
+  padding: 18px 0;
+  max-height: 500px;
 
-  /* ----- Footer -----*/
+}
+.cta-read-more-mobile{
+  display: none;
+}
+ /* ----- Footer -----*/
 .footer_container{
   height: 200px;
 }
@@ -590,8 +623,6 @@ label{
 .footer-logo_container{ 
   padding-top: 35px;
 }
-
-
 /* ----- About Us Page -----*/
 .about-img{
   margin: -10px 0 0 0;
@@ -683,19 +714,6 @@ label{
   .post_text{
     font-size: var(--mb-font-poster-header);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -----List Of Posts Page-----*/
 .list-of-posts-header{
   display: flex;
@@ -797,7 +815,29 @@ label{
 
 @media (min-width:1280px){
   /* ----- HOME -----*/
-
+ /* -----Todays Post-----*/
+.post-of-today_img-container{
+  width: 60%;
+}
+.post-of-today_text-container{
+  height: 400px;
+  padding: 25px 35px;
+  width: 650px;
+}
+.text{
+  font-size: var(--dk-font-text);
+}
+.cta-read-more-desktop{
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  top: 440px;
+  left: 20%;
+  padding: 15px 80px;
+  background-color: var(--yellow);
+  border: none;
+  font-size: var(--mb-font-headers);
+}
 
 
   /* ----- About Us Page -----*/
