@@ -17,6 +17,7 @@ export function fetchMainPagePosts(posts){
 
   const createPosts = (post) =>{
     const anchorTag = document.createElement("a");
+    anchorTag.href =`specifics.html?id=${post.id}`;
 
     const div = document.createElement("div");
     div.classList.add("post_container");

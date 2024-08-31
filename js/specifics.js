@@ -1,16 +1,20 @@
 import { url } from "./constants/constant.js";
-const fullLink = url + "&per_page=20";
-
-import { catchAndDisplay } from "./ui/catchAndDisplay.js";
-import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
-import { fetchLatestPosts } from "./api/fetchLatestPosts.js";
-import { fetchMainPagePosts } from "./api/fetchMainPagePosts.js";
+import { getQueryParam } from "./helper/getQueryParam.js";
+import { fetchSinglePost } from "./api/fetchSinglePost.js";
 
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 
-async function index(){
+
+async function displayPost(){
+
+  const id = getQueryParam("id");
+  const postUrl = `${url}/${id}`;
+  if(!id){
+    window.location.href="";
+  }
+
   try{
     window.addEventListener("scroll", handleScroll);
 
@@ -20,28 +24,15 @@ async function index(){
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
 
-
-    const fetched = await fetch(fullLink);
+    const fetched = await fetch(postUrl);
     const results = await fetched.json();
-    const posts = results;
+    const post = results;
 
-    fetchTodaysPosts(posts);
-    fetchLatestPosts(posts);
-    fetchMainPagePosts(posts);
+    fetchSinglePost(post);
 
 
   }catch(error){
-    catchAndDisplay()
+    catchAndDisplay();
   }
-};
-
-index();
-
-
-/*------ hamburger,logo  and nav are intertwined in these functions below----*/ 
-
-
-
-
-
-
+}
+displayPost();

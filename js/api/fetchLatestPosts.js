@@ -19,6 +19,7 @@ export function fetchLatestPosts(posts){
 
   const createPosts = (post) =>{
     const anchorTag = document.createElement("a");
+    anchorTag.href =`specifics.html?id=${post.id}`;
     anchorTag.setAttribute("id", "post-in-carousel");
 
     const div = document.createElement("div");

@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <title>The Traveler Blog | Home Page</title>
-  <meta name="description" content="We who travel, we are never sure if the information we see online can be trusted. This ends now with the new travel blog made by travelers for travelers">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="styles.css" rel="stylesheet">
-</head>
+  <head>
+    <title>The Traveler Blog | Post Page</title>
+    <meta name="description" content="We who travel, we are never sure if the information we see online can be trusted. This ends now with the new travel blog made by travelers for travelers">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  
+    <script src="https://kit.fontawesome.com/54f19440a6.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="js/specifics.js" type="module"></script>
+  </head>
 
 
 
 <body>
   <header>
+    <section class="header">
+      <div>
+        <a href="index.html" class="logo_container">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
+          <p class="logo_text">The Traveler Blog</p>
+        </a>
+      </div>
 
+      <section class="cta-header_container">
+        <a href="index.html" class="cta-header"><i class="fa-solid fa-house"></i> HOME</a>
+        <a href="list-of-posts.html" class="cta-header"><i class="fa-solid fa-newspaper"></i> POSTS</a>
+      </section>
+      
+      <button class="hamburger">
+        <i class="icon-hamburger fa-solid fa-bars"></i>
+        <i class="icon-close fa-solid fa-xmark"></i>
+      </button>
+
+      <nav id="header_nav" class="header_nav">
+        <div class="triangle-nav"></div>
+        <ul>
+          <li><a class="navItem" href="index.html">HOME <i class="fa-solid fa-house"></i></a></li>
+          <li><a class="navItem" href="list-of-posts.html">POSTS <i class="fa-solid fa-newspaper"></i></a></li>
+          <li><a class="navItem" href="about.html">ABOUT US <i class="fa-solid fa-book"></i></a></li>
+          <li><a class="navItem" href="contact.html">CONTACT US <i class="fa-solid fa-phone"></i></a></li>
+        </ul>
+      </nav>
+    </section>
   </header>
 
 
   
   <main>
+    <section class="specifics-all_container" id="specifics-all_container">
 
+      <!-- <section class="specifics-img_container"></section>
+      <section class="specifics-text_container"></section> -->
+    </section>
+
+    <section class="feedback_container">
+      <form action="">
+        
+      </form>
+    </section>
+
+    <section class="other-posts_container">
+
+    </section>
   </main>
 
 
 
   <footer>
-
+    <section class="footer_container">
+      <div class="footer-nav_container">
+        <a href="contact.html" class="footer-nav"><i class="fa-solid fa-phone"></i> CONTACTS US</a>
+        <a href="about.html" class="footer-nav"><i class="fa-solid fa-book"></i> ABOUT US</a>
+      </div>
+      <div class="footer-logo_container">
+        <a href="index.html" class="logo_container footer-logo_container">
+          <img src="pictures/logo-mobile.png" alt="Logo of the Page" id="logo" class="logo">
+          <p class="logo_text">The Traveler Blog</p>
+        </a>
+      </div>
+    </section>
   </footer>
 </body>
 </html>
