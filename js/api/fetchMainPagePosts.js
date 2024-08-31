@@ -12,8 +12,8 @@ export function fetchMainPagePosts(posts){
     post.class_list.includes("category-asia")
   );
 
-  const limitEuropePosts = filteredEuropePosts.slice(0, 3);
-  const limitAsiaPosts = filteredAsiaPosts.slice(0, 3);
+  const limitEuropePosts = filteredEuropePosts.slice(0, 6);
+  const limitAsiaPosts = filteredAsiaPosts.slice(0, 6);
 
   const createPosts = (post) =>{
     const anchorTag = document.createElement("a");

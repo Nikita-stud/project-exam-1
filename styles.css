@@ -189,13 +189,38 @@ nav ul li:hover{
   display: none;
 }
 /* -----Carousel Main Page-----*/
+.latest-posts_container{
+  position: relative;
+}
 .carousel_container{
-  height: 600px;
+  padding: 5px 25px;
   width: 100%;
-  background-color: #072d2d;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
   gap: 30px;
+  margin-bottom: 33px;
+}
+.cta-latest-posts{
+  width: 50px;
+  height: 100px;
+  background-color: rgba(246, 240, 231, 0.923);
+  cursor: pointer;
+  border: none;
+  font-size: var(--dk-font-text);
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  top: 50%;
+}
+.cta-latest-posts:hover{
+  background-color: rgb(242, 230, 212);
+}
+.cta-next-post{
+  right: 0px;
+}
+.cta-last-post{
+  left: 0px;
 }
 
 

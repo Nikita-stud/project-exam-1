@@ -1,4 +1,16 @@
 const carousel =document.getElementById("carousel_container");
+const prevCta = document.getElementById("cta-last-post");
+const nextCta = document.getElementById("cta-next-post");
+
+nextCta.addEventListener("click", function(){
+  carousel.scrollLeft += 380;
+})
+prevCta.addEventListener("click", function(){
+  carousel.scrollLeft -= 380;
+})
+
+
+
 
 export function fetchLatestPosts(posts){
 
@@ -7,6 +19,7 @@ export function fetchLatestPosts(posts){
 
   const createPosts = (post) =>{
     const anchorTag = document.createElement("a");
+    anchorTag.setAttribute("id", "post-in-carousel");
 
     const div = document.createElement("div");
     div.classList.add("post_container");

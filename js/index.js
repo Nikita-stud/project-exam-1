@@ -1,4 +1,7 @@
 import { url } from "./constants/constant.js";
+const fullLink = url + "&per_page=20";
+
+
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
 import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
 import { fetchLatestPosts } from "./api/fetchLatestPosts.js";
@@ -19,9 +22,11 @@ async function index(){
     hamburger.addEventListener("click", toggleHamburger);
 
 
-    const fetched = await fetch(url);
+    const fetched = await fetch(fullLink);
     const results = await fetched.json();
     const posts = results;
+
+
     
     //  console.dir(posts)
 
