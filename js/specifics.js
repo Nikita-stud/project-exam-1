@@ -11,6 +11,7 @@ async function displayPost(){
 
   const id = getQueryParam("id");
   const postUrl = `${url}/${id}`;
+  
   if(!id){
     window.location.href="";
   }
