@@ -13,7 +13,7 @@ async function displayPost(){
   const postUrl = `${url}/${id}`;
   
   if(!id){
-    window.location.href="";
+    window.location.href="/";
   }
 
   try{
