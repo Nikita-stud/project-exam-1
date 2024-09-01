@@ -10,7 +10,8 @@ import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 async function displayPost(){
 
   const id = getQueryParam("id");
-  const postUrl = `${url}/${id}`;
+  const newUrl = url.replace("?_embed","")
+  const postUrl = `${newUrl}/${id}?_embed`;
   
   if(!id){
     window.location.href="/";

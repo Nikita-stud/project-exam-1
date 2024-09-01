@@ -6,33 +6,22 @@ export function fetchSinglePost(post){
     title.classList.add("specifics_title")
     title.innerText = post.title.rendered;
 
-    // const img = document.createElement("img");
-    // img.classList.add("specifics-main-img");
-    // const mediaImg = post._embedded[`wp:featuredmedia`][0];
-    // img.src = `${mediaImg.media_details.sizes.full.source_url}`;
-    // img.alt = `${mediaImg.alt_text}`;
+    const mainImg = document.createElement("img");
+    mainImg.classList.add("specifics-main-img");
+    const mediaImg = post._embedded[`wp:featuredmedia`][0];
+    mainImg.src = `${mediaImg.media_details.sizes.full.source_url}`;
+    mainImg.alt = `${mediaImg.alt_text}`;
 
-    // const p = document.createElement("p");
-    // p.classList.add("post_text")
-    // const tempContainer = document.createElement("div");
-    // tempContainer.innerHTML = post.content.rendered;
-    // const allText = tempContainer.querySelectorAll("p")
-    // let paragraphs = "";
-  
-    // allText.forEach(paragraph => {
-    //   paragraphs += paragraph.innerHTML + `<br>`;
-    // });
-  
-    // p.innerHTML =  paragraphs;
+    const textDiv = document.createElement("div");
+    textDiv.classList.add("specifics-text_container")
+    const tempContainer = document.createElement("div");
+    tempContainer.innerHTML = post.content.rendered;
 
-    // const readMore = document.createElement("p");
-    // readMore.classList.add("post-read-more");
-    // readMore.innerHTML = `Read More <i class="fa-solid fa-arrow-right"></i>`;
-     
+    const renderedText = tempContainer.innerHTML.replace(/<(?!h2|h3|h4|h5|h6|p|li|br)[^>]*\>/g,'');
+    textDiv.innerHTML = renderedText;
 
     mainContainer.append(title);
-    // mainContainer.append(img);
-    // mainContainer.append(p);
-    // mainContainer.append(readMore);
+    mainContainer.append(mainImg);
+    mainContainer.append(textDiv);
 
 }

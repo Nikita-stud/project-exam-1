@@ -1,5 +1,5 @@
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
-import { handleSubmitForm } from "./helper/events/handleSubmitForm.js";
+import { handleFormValidation } from "./ui/contactFormValidion.js";
 
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
@@ -15,7 +15,7 @@ async function index(){
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
 
-    handleSubmitForm();
+    handleFormValidation()
 
   }catch(error){
     catchAndDisplay()

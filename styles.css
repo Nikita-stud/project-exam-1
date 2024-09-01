@@ -65,8 +65,8 @@ header{
   background: var(--blue);
   box-shadow: rgba(99, 99, 111, 0.2) 2px 7px 18px 0px;
 }
-.header.scrolled{
-  background: rgba(119, 168, 172, 0.9);
+.scrolled{
+  opacity: 0.9;
   transition: all 0.5s;
 }
 .logo_container{
@@ -90,6 +90,9 @@ nav{
   max-width: 323px;
   height: 311px;
   position: relative;
+}
+.header_nav.scrolled{
+  opacity: 1;
 }
 .header_nav{
   margin-top: 60px;
@@ -493,16 +496,40 @@ label{
 .cta-send:hover{
   background-color: rgb(236, 229, 219);
 }
+
+
+
+
+
+
+
+
+
 /* ----- Specifics Page -----*/
 .specifics-all_container{
   padding: 25px;
-  height: 500px;
 }
+.specifics-text_container{
+  padding: 18px 0 0 0;
+}
+.specifics-text_container h2,.specifics-text_container h3,.specifics-text_container h4,.specifics-text_container h5,.specifics-text_container h6{
+  font-size: var(--mb-font-headers);
+  font-family: var(--font-normal);
+  padding: 18px 0;
+}
+.specifics-text_container h3 p{
+  font-size: var(--mb-font-text);
+  font-family: var(--font-readable);
+  font-weight: 500;
+  padding: 8px 0;
+}
+
 /* .specifics-img_container{
 
 } */
 .specifics_title{
   font-size: var(--mb-font-headers-biggest);
+  padding: 0 0 25px 0;
 }
 .specifics-main-img{
   width: 100%;
