@@ -1,7 +1,14 @@
 const europeContainer = document.getElementById("posts-main-page_container-europe");
 const asiaContainer = document.getElementById("posts-main-page_container-asia");
+// const loadingPost = document.getElementById("loading_post");
+
+// for(let i =0; i< 6; i++){
+//   europeContainer.append(loadingPost.content.cloneNode(true));
+//   asiaContainer.append(loadingPost.content.cloneNode(true));
+// }
 
 export function fetchMainPagePosts(posts){
+
   europeContainer.innerHTML ="";
   asiaContainer.innerHTML ="";
 

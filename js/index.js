@@ -2,7 +2,7 @@ import { url } from "./constants/constant.js";
 const fullLink = url + "&per_page=20";
 
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
-import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
+import { fetchPostOfToday } from "./api/fetchPostOfToday.js";
 import { fetchMainPagePosts } from "./api/fetchMainPagePosts.js";
 
 import { handleScroll } from "./helper/events/handleScroll.js";
@@ -25,7 +25,7 @@ async function index(){
     const results = await fetched.json();
     const posts = results;
 
-    fetchTodaysPosts(posts);
+    fetchPostOfToday(posts);
     fetchCarousel(posts);
     fetchMainPagePosts(posts);
 

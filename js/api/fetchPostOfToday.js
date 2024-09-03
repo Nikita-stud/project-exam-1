@@ -1,8 +1,8 @@
 const imgContainer = document.getElementById("post-of-today_img-container");
 const container = document.getElementById("post-of-today_text-container");
 
-export function fetchTodaysPosts(posts){
-
+export function fetchPostOfToday(posts){
+  
   const featuredArray = posts.filter(post=>
   post.class_list.includes("tag-post-of-the-day" && "category-post-of-the-day")
   );
@@ -45,20 +45,3 @@ export function fetchTodaysPosts(posts){
   container.append(button);
 
 }
-    
-  
-
-
-      // if(post.class_list == "category-post-of-the-day" || post.class_list == "tag-post-of-the-day" ){
-      //   console.log(post)
-      // }
-      
-
-    // function featuredFilteredPost(feature){
-    //   if(feature.class_list == "tag-post-of-the-day" && feature.class_list == "category-post-of-the-day"){
-    //     return feature;
-    //   }
-    // };
-
-    // const featured = post.filter(featuredFilteredPost);
-
