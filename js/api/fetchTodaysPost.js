@@ -36,6 +36,9 @@ export function fetchTodaysPosts(posts){
   const button = document.createElement("button");
   button.classList.add("cta-read-more-mobile");
   button.innerHTML =`Read More <i class="fa-solid fa-angle-right"></i>`;
+  button.addEventListener("click", function(){
+    location.href = `specifics.html?id=${featuredFirstPost.id}`;
+  });
 
   container.append(title);
   container.append(text);

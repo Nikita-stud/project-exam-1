@@ -182,10 +182,13 @@ nav ul li:hover{
 .text{
   font-family: var(--font-readable);
   font-size: var(--mb-font-text);
-  padding: 18px 0;
+  padding: 10px 0;
   max-height: 400px;
   text-overflow: ellipsis;
   white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
 .cta-read-more-desktop{
@@ -235,6 +238,7 @@ nav ul li:hover{
 }
 /* -----Posts General-----*/
 .post_container{
+  position: relative;
   width: 280px;
   height: 381px;
   padding: 25px;
@@ -259,14 +263,16 @@ nav ul li:hover{
 .post_title{
   font-family: var(--font-normal);
   font-size: var(--mb-font-poster-header);
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding:4px 0 7px 0;
+  padding:4px 0 2px 0;
 
 }
 .post_text{
+  padding-top: 4px;
   font-family: var(--font-readable);
   font-size: var(--mb-font-poster-text);
   display: -webkit-box;
@@ -278,6 +284,9 @@ nav ul li:hover{
 .post-read-more{
   font-size: var(--mb-font-poster-header);
   float: right;
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
   padding-top: 6px;
 }
 .post-read-more:hover{
@@ -642,7 +651,8 @@ label{
 }
 .post-of-today_text-container{
   height: 410px;
-  padding: 25px;
+  padding: 25px; 
+  overflow: hidden;
   width: 400px;
   position: absolute;
   top: 95px;
@@ -651,8 +661,7 @@ label{
 .text{
   font-size: var(--mb-font-text);
   padding: 18px 0;
-  max-height: 500px;
-
+  max-height: 335px;  
 }
 .cta-read-more-mobile{
   display: none;
@@ -879,6 +888,7 @@ label{
 }
 .text{
   font-size: var(--dk-font-text);
+  height: 308px;
 }
 .cta-read-more-desktop{
   display: block;

@@ -14,14 +14,24 @@ export function fetchSinglePost(post){
 
     const textDiv = document.createElement("div");
     textDiv.classList.add("specifics-text_container")
+
     const tempContainer = document.createElement("div");
     tempContainer.innerHTML = post.content.rendered;
-
     const renderedText = tempContainer.innerHTML.replace(/<(?!h2|h3|h4|h5|h6|p|li|br)[^>]*\>/g,'');
     textDiv.innerHTML = renderedText;
+
+    const renderedImgs = tempContainer.querySelectorAll("img");
+    const smallImgContainer = document.createElement("div")
+
+    for(let i = 0; i<renderedImgs.length; i++){
+        smallImgContainer.innerHTML = renderedImgs[i].currentSrc;
+        console.log(rend)
+    }
+
+
 
     mainContainer.append(title);
     mainContainer.append(mainImg);
     mainContainer.append(textDiv);
-
+    mainContainer.append(div);
 }
