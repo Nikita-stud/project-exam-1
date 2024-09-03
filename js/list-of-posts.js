@@ -1,6 +1,6 @@
 import { url } from "./constants/constant.js";
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
-import { fetchPosts } from "./api/fetchPosts.js";
+import { fetchListOfPosts } from "./api/fetchListOfPosts.js";
 
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
@@ -23,7 +23,7 @@ async function displayListPage(){
     const posts = results;
     
     handlePostsForm()
-    fetchPosts(posts)
+    fetchListOfPosts(posts)
 
 
   }catch(error){

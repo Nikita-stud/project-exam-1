@@ -30,7 +30,8 @@ export function fetchMainPagePosts(posts){
 
     const title = document.createElement("h5");
     title.classList.add("post_title")
-    title.innerText = `${post.title.rendered}`;
+    const renderedTitle = post.title.rendered.replace("&#8217", "")
+    title.innerText = renderedTitle;
 
     const p = document.createElement("p");
     p.classList.add("post_text")

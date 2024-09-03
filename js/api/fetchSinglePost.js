@@ -4,7 +4,8 @@ export function fetchSinglePost(post){
 
     const title = document.createElement("h1");
     title.classList.add("specifics_title")
-    title.innerText = post.title.rendered;
+    const renderedTitle = post.title.rendered.replace("&#8217", "")
+    title.innerText = renderedTitle;
 
     const mainImg = document.createElement("img");
     mainImg.classList.add("specifics-main-img");

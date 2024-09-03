@@ -3,12 +3,12 @@ const fullLink = url + "&per_page=20";
 
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
 import { fetchTodaysPosts } from "./api/fetchTodaysPost.js";
-import { fetchLatestPosts } from "./api/fetchLatestPosts.js";
 import { fetchMainPagePosts } from "./api/fetchMainPagePosts.js";
 
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
+import { fetchCarousel } from "./api/fetchCarousel.js";
 
 async function index(){
   try{
@@ -26,7 +26,7 @@ async function index(){
     const posts = results;
 
     fetchTodaysPosts(posts);
-    fetchLatestPosts(posts);
+    fetchCarousel(posts);
     fetchMainPagePosts(posts);
 
 
