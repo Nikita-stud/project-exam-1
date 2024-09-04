@@ -1,91 +1,93 @@
 const form = document.getElementById("form-contact");
-const inputs = document.querySelectorAll("input");
 
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
+
 const submit = document.getElementById("cta-send");
 
-const errorName = document.getElementById("name_error");
-const errorEmail = document.getElementById("email_error");
-const errorSubject = document.getElementById("subject_error");
-const errorMessage = document.getElementById("message_error");
 
 
 export function handleFormValidation(event){
   event.preventDefault();
 
   let valid = true;
-   
-  // inputs.forEach((input)=>{
-  //   input.classList.remove("error", "accept")
-  // })
-  
+
+  function validateName(){
+    const errorName = document.getElementById("name_error");
+
     if(!name.value || name.value.length <= 5){
       name.classList.add("error");
+      name.classList.remove("accept")
       errorName.innerText= "Name must contain 5 letters";
       valid = false;
     }else{
       name.classList.add("accept");
       errorName.innerText =""
     }
+  }
 
+
+  function validateEmail(){
+    const errorEmail = document.getElementById("email_error");
+
+    function validateMail(email){
+      const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      return re.test(String(email).toLowerCase());
+    }
     if(!email.value || !validateMail(email.value)){
       email.classList.add("error");
+      email.classList.remove("accept")
       errorEmail.innerText = "Provide a valid email";
       valid = false;
     }else{
       email.classList.add("accept");
       errorEmail.innerText ="";
     }
+  }
 
+
+  function validateSubject(){
+    const errorSubject = document.getElementById("subject_error");
     if(!subject.value || subject.value.length <= 15){
       subject.classList.add("error");
+      subject.classList.remove("accept")
       errorSubject.innerText = "Subject must contain at least 15 letters";
       valid = false;
     }else{
       subject.classList.add("accept");
       errorSubject.innerText="";
     }
+  }
 
+
+  function validateMessage(){
+    const errorMessage = document.getElementById("message_error");
     if(!message.value.length || message.value.length <=25){
       message.classList.add("error");
+      message.classList.remove("accept")
       errorMessage.innerText = "Message must contain 25 letters";
       valid = false;
     }else{
       message.classList.add("accept");
       errorMessage.innerText="";
     }
-
+  }
 
   if(valid){
     submit.disabled = false;
   }
+
+
+  name.addEventListener("input",validateName);
+  email.addEventListener("input", validateEmail)
+  subject.addEventListener("input",validateSubject);
+  message.addEventListener("input",validateMessage);
+
 }
 
-form.addEventListener("submit", handleFormValidation)
-
-
-
-function validateMail(email){
-  const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  return re.test(String(email).toLowerCase());
-}
-
-
-
-
-// message.onkeyup = function(){
-//   const messageLength = event.target.value.length;
-//   if(messageLength >= 6){
-//     submit.disabled = false;
-//   }else{
-//     submit.disabled = true;
-//   }
-// }
-
-
+form.addEventListener("input", handleFormValidation);
 
 
 

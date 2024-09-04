@@ -1,4 +1,6 @@
 import { url } from "./constants/constant.js";
+const newUrl = url.replace("/?_embed","?page=1")
+
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
 import { fetchListOfPosts } from "./api/fetchListOfPosts.js";
 
@@ -18,7 +20,7 @@ async function displayListPage(){
     hamburger.addEventListener("click", toggleHamburger);
 
 
-    const fetched = await fetch(url);
+    const fetched = await fetch(newUrl);
     const results = await fetched.json();
     const posts = results;
     
