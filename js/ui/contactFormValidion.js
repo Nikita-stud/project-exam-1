@@ -39,7 +39,7 @@ export function handleFormValidation(event){
     if(!email.value || !validateMail(email.value)){
       email.classList.add("error");
       email.classList.remove("accept")
-      errorEmail.innerText = "Provide a valid email";
+      errorEmail.innerHTML = `<p>Provide a valid email with <i class="fa-solid fa-at"></i> and  dot com</p>`;
       valid = false;
     }else{
       email.classList.add("accept");
