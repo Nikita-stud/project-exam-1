@@ -1,13 +1,9 @@
 const form = document.getElementById("form-contact");
-
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
-
 const submit = document.getElementById("cta-send");
-
-
 
 export function handleFormValidation(event){
   event.preventDefault();
@@ -75,15 +71,14 @@ export function handleFormValidation(event){
     }
   }
 
-  if(valid){
-    submit.disabled = false;
-  }
+    submit.disabled = valid;
 
 
-  name.addEventListener("input",validateName);
-  email.addEventListener("input", validateEmail)
-  subject.addEventListener("input",validateSubject);
-  message.addEventListener("input",validateMessage);
+
+  name.addEventListener("change",validateName);
+  email.addEventListener("change", validateEmail)
+  subject.addEventListener("change",validateSubject);
+  message.addEventListener("change",validateMessage);
 
 }
 
