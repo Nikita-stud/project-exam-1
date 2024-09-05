@@ -1,11 +1,9 @@
 const container = document.getElementById("all-posts_container")
 
-export function fetchListOfPosts(posts){
+export function fetchListOfPosts(filteredPosts){
+  container.innerHTML="";
 
-  let postsToRender = posts;
-
-  postsToRender.forEach(post => {
-    
+  filteredPosts.forEach(post => {
     const anchorTag = document.createElement("a");
     anchorTag.href =`specifics.html?id=${post.id}`;
 
