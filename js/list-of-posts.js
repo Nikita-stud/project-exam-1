@@ -7,7 +7,7 @@ import { fetchListOfPosts } from "./api/fetchListOfPosts.js";
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
-import { handlePostsForm } from "./helper/events/handlePostsForm.js";
+// import { handlePostsForm } from "./helper/events/handlePostsForm.js";
 
 async function displayListPage(){
   try{
@@ -24,7 +24,7 @@ async function displayListPage(){
     const results = await fetched.json();
     const posts = results;
     
-    handlePostsForm()
+    // handlePostsForm()
     fetchListOfPosts(posts)
 
 
