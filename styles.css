@@ -474,6 +474,9 @@ nav ul li:hover{
   font-family: var(--font-readable);
   font-weight: 500;
 }
+.form-span-message{
+  color: #5b1616;;
+}
 /* .input:hover{
   border-bottom:  3px solid #072d2d;
 } */

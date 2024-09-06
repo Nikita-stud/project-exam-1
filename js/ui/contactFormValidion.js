@@ -10,10 +10,10 @@ export function handleFormValidation(event){
 
   name.addEventListener("change", () => {
     const errorName = document.getElementById("name_error");
-    if(!name.value || name.value.length <= 5){
+    if(!name.value || name.value.length < 5){
       name.classList.add("error");
       name.classList.remove("accept")
-      errorName.innerText= "Name must contain 5 letters";
+      errorName.innerText= "Name must contain at least 5 letters";
     }else{
       name.classList.add("accept");
       errorName.innerText =""
@@ -38,10 +38,10 @@ export function handleFormValidation(event){
   
   subject.addEventListener("change", () => {
     const errorSubject = document.getElementById("subject_error");
-    if(!subject.value || subject.value.length <= 15){
+    if(!subject.value || subject.value.length < 15){
       subject.classList.add("error");
       subject.classList.remove("accept")
-      errorSubject.innerText = "Subject must contain at least 15 letters";
+      errorSubject.innerHTML = `<p>Subject must contain at least 15 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
     }else{
       subject.classList.add("accept");
       errorSubject.innerText="";
@@ -50,10 +50,10 @@ export function handleFormValidation(event){
   
   message.addEventListener("change", () => {
     const errorMessage = document.getElementById("message_error");
-    if(!message.value.length || message.value.length <=25){
+    if(!message.value.length || message.value.length < 25){
       message.classList.add("error");
       message.classList.remove("accept")
-      errorMessage.innerText = "Message must contain 25 letters";
+      errorMessage.innerHTML = `<p>Message must contain 25 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
     }else{
       message.classList.add("accept");
       errorMessage.innerText="";
