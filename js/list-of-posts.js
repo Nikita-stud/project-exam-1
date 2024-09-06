@@ -12,13 +12,14 @@ import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 async function displayListPage(){
   try{
     window.addEventListener("scroll", handleScroll);
-
     const screenWidth = window.matchMedia('(min-width: 834px)')
-    screenWidth.addEventListener("change", handleWidth);
-
+    screenWidth.addEventListener("change", handleWidth)
+    if(window.innerWidth > 834){
+      handleWidth(screenWidth)
+    }
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
-
+    
     const fetched = await fetch(addToUrl);
     const results = await fetched.json();
     const posts = results;

@@ -8,7 +8,6 @@ import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 
 
 async function displayPost(){
-
   const id = getQueryParam("id");
   const newUrl = url.replace("?_embed","")
   const postUrl = `${newUrl}/${id}?_embed`;
@@ -19,10 +18,11 @@ async function displayPost(){
 
   try{
     window.addEventListener("scroll", handleScroll);
-
     const screenWidth = window.matchMedia('(min-width: 834px)')
-    screenWidth.addEventListener("change", handleWidth);
-
+    screenWidth.addEventListener("change", handleWidth)
+    if(window.innerWidth > 834){
+      handleWidth(screenWidth)
+    }
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
 

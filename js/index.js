@@ -1,5 +1,4 @@
 import { url } from "./constants/constant.js";
-const fullLink = url + "&per_page=20";
 
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
 import { fetchPostOfToday } from "./api/fetchPostOfToday.js";
@@ -12,11 +11,14 @@ import { fetchCarousel } from "./api/fetchCarousel.js";
 
 async function index(){
   try{
+    const fullLink = url + "&per_page=20";
+
     window.addEventListener("scroll", handleScroll);
-
     const screenWidth = window.matchMedia('(min-width: 834px)')
-    screenWidth.addEventListener("change", handleWidth);
-
+    screenWidth.addEventListener("change", handleWidth)
+    if(window.innerWidth > 834){
+      handleWidth(screenWidth)
+    }
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
 
