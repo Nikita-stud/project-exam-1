@@ -20,7 +20,6 @@ export function filterPosts(posts, callback){
     callback(filteredPosts);
   });
 
-
   newestToOldestButton.addEventListener("click",()=>{
     oldestToNewestButton.checked= false;
     if(filteredPosts.length > 0){
@@ -36,8 +35,6 @@ export function filterPosts(posts, callback){
     }
     callback(filteredPosts)
   });
-  
-
 
 }
 
