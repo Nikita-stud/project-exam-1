@@ -25,7 +25,6 @@ async function displayListPage(){
     const posts = results;
 
     fetchListOfPosts(posts)
-
     filterPosts(posts, (filteredPosts) =>{
       fetchListOfPosts(filteredPosts)
     });
