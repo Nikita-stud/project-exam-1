@@ -81,7 +81,7 @@ header{
 }
 .logo_text{
   font-family: var(--font-normal);
-  color: var(--white);
+  color: var(--yellow);
   font-size: var(--mb-font-headers);
 }
 .logo_text.scrolled{
