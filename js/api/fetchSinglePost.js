@@ -31,7 +31,6 @@ export function fetchSinglePost(post){
         img.alt ="Image of one of the landscapes in the country";
         smallImgContainer.appendChild(img);
     });
-
     headers[2].appendChild(smallImgContainer)
 
     mainContainer.append(title);

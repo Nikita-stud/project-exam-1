@@ -65,19 +65,31 @@
   
   <main>
     <section class="specifics-all_container" id="specifics-all_container">
-
-      <!-- <section class="specifics-img_container"></section>
-      <section class="specifics-text_container"></section> -->
     </section>
 
+
+
     <section class="feedback_container">
-      <form action="">
-        
+      <h5>Feedback</h5>
+      <p class="feedback_text">Did You Find This Post Helpful or Educational?</p>
+      <form action="./php/send-comment.php" method="GET">
+        <div class="feedback-cta_container">
+          <button class="feedback-btn cta-like"><i class="fa-solid fa-thumbs-up"></i></button>
+          <button class="feedback-btn cta-dislike"><i class="fa-solid fa-thumbs-down"></i></button>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="input"></textarea>
+          <div class="error-text" id="message_error"></div>
+        </div>
+        <button class="cta-send" id="cta-send" disabled>SEND IN</button>
       </form>
     </section>
 
-    <section class="other-posts_container">
 
+
+
+    <section class="other-posts_container">
     </section>
   </main>
 
