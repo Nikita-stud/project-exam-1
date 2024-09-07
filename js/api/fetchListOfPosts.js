@@ -18,7 +18,7 @@ export function fetchListOfPosts(filteredPosts){
 
     const title = document.createElement("h5");
     title.classList.add("post_title")
-    const renderedTitle = post.title.rendered.replace("&#8217", "")
+    const renderedTitle = post.title.rendered.replace("&#8217;", "")
     title.innerText = renderedTitle;
 
     const p = document.createElement("p");
