@@ -1,7 +1,6 @@
 const mainContainer = document.getElementById("specifics-all_container");
 
 export function fetchSinglePost(post){
-
     const title = document.createElement("h1");
     title.classList.add("specifics_title")
     const renderedTitle = post.title.rendered.replace("&#8217", "")
@@ -16,24 +15,27 @@ export function fetchSinglePost(post){
 
     const textDiv = document.createElement("div");
     textDiv.classList.add("specifics-text_container")
-
     const tempContainer = document.createElement("div");
     tempContainer.innerHTML = post.content.rendered;
     const renderedText = tempContainer.innerHTML.replace(/<(?!h2|h3|h4|h5|h6|p|li|br)[^>]*\>/g,'');
     textDiv.innerHTML = renderedText;
 
+    const smallImgContainer = document.createElement("div");
+    smallImgContainer.classList.add("specifics-other-img_container");
     const renderedImgs = tempContainer.querySelectorAll("img");
-    const smallImgContainer = document.createElement("div")
+    let convertedNode = Array.from(renderedImgs);
 
-    for(let i = 0; i<renderedImgs.length; i++){
-        smallImgContainer.innerHTML = renderedImgs[i].currentSrc;
-        console.log(rend)
-    }
+    convertedNode.forEach((img)=>{
+        img.classList.add("specifics-other_imgs");
+        img.alt ="Image of one of the landscapes in the country";
+        smallImgContainer.appendChild(img);
+    });
 
 
 
+    
     mainContainer.append(title);
     mainContainer.append(mainImg);
     mainContainer.append(textDiv);
-    mainContainer.append(div);
+    mainContainer.append(smallImgContainer);
 }

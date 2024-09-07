@@ -564,6 +564,20 @@ label{
   border-radius: 2px;
   box-shadow: var(--box-shadow);
 }
+
+
+
+
+.specifics-other-img_container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.specifics-other_imgs{
+  width: 200px;
+  height: 200px;
+}
 /* .specifics-text_container{
 
 } */
