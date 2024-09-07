@@ -20,8 +20,8 @@ export function fetchSinglePost(post){
     const renderedText = tempContainer.innerHTML.replace(/<(?!h2|h3|h4|h5|h6|p|li|br)[^>]*\>/g,'');
     textDiv.innerHTML = renderedText;
 
-    // const smallImgContainer = document.createElement("div");
-    // smallImgContainer.classList.add("specifics-other-img_container");
+    const smallImgContainer = document.createElement("div");
+    smallImgContainer.classList.add("specifics-other-img_container");
     const renderedImgs = tempContainer.querySelectorAll("img");
     let convertedNode = Array.from(renderedImgs);
     const headers = textDiv.querySelectorAll("h3");
@@ -29,14 +29,12 @@ export function fetchSinglePost(post){
     convertedNode.forEach((img)=>{
         img.classList.add("specifics-other_imgs");
         img.alt ="Image of one of the landscapes in the country";
-        headers[2].appendChild(img.cloneNode(true))
-        // smallImgContainer.appendChild(img);
+        smallImgContainer.appendChild(img);
     });
 
-
+    headers[2].appendChild(smallImgContainer)
 
     mainContainer.append(title);
     mainContainer.append(mainImg);
     mainContainer.append(textDiv);
-    mainContainer.append(smallImgContainer);
 }
