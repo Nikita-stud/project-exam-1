@@ -52,6 +52,9 @@ p{
 .delete{
   opacity: 0;
 }
+.display-none{
+  display: none;
+}
 
 /* ----- Header -----*/
 header{
