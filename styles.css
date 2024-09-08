@@ -672,7 +672,19 @@ label{
 .enlarge-icon-close:hover{
   font-size: 3.2rem;
 }
-
+.specifics-loading_container{
+  width: 100%;
+  height: 700px;
+}
+.specifics-loading_container div{
+  margin-top: 20px;
+  padding-top: 13px;
+}
+.specifics_img{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
 
 
 

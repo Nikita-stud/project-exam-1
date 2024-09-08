@@ -1,6 +1,8 @@
 const mainContainer = document.getElementById("specifics-all_container");
 
 export function fetchSinglePost(post){
+    mainContainer.innerHTML = "";
+
     const title = document.createElement("h1");
     title.classList.add("specifics_title")
     const renderedTitle = post.title.rendered.replace("&#8217;", "")
