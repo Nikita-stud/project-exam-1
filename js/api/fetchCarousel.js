@@ -1,7 +1,7 @@
 const carousel =document.getElementById("carousel_container");
 const prevCta = document.getElementById("cta-last-post");
 const nextCta = document.getElementById("cta-next-post");
-const loadingContainer = document.getElementById("loading_container");
+const loadingContainer = document.getElementById("loading_container")
 
 nextCta.addEventListener("click", function(){
   carousel.scrollLeft += 225;
@@ -12,7 +12,7 @@ prevCta.addEventListener("click", function(){
 
 
 export function fetchCarousel(posts){
-  loadingContainer.style.display ="none";
+  loadingContainer.style.display="none";
 
   const newestPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   const limitTodaysPosts = newestPosts.slice(0, 5);
