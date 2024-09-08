@@ -5,22 +5,37 @@ const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 const submit = document.getElementById("cta-send");
 
-export function contactFormValidation(event){
-  event.preventDefault();
 
-  name.addEventListener("change", () => {
+export function contactFormValidation(event){
+  event.preventDefault()
+  const isDisabled = handleFormValidation()
+  submit.disabled = isDisabled;
+
+  const textContainer = document.getElementById("form-contact_container");
+
+  submit.addEventListener("click", ()=>{
+    textContainer.innerHTML= `<div class="submit-success_container">
+                                 <p class="submit-success_text"><span class="submit-success_text-icon"><i class="fa-solid fa-circle-check"></i></span>Thank you for submiting your question or inquirie, we will answer as fast as we can!</p>
+                              </div>`;
+  })
+}
+form.addEventListener("input", contactFormValidation);
+
+
+function handleFormValidation(){
+    let disabled = false;
+
     const errorName = document.getElementById("name_error");
-    if(!name.value || name.value.length < 5){
+    if(!name.value || name.value.length <= 5){
       name.classList.add("error");
       name.classList.remove("accept")
       errorName.innerText= "Name must contain at least 5 letters";
+      disabled = true;
     }else{
       name.classList.add("accept");
       errorName.innerText =""
     }
-  });
   
-  email.addEventListener("change", () => {
     const errorEmail = document.getElementById("email_error");
     function validateMail(email){
       const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -30,42 +45,35 @@ export function contactFormValidation(event){
       email.classList.add("error");
       email.classList.remove("accept")
       errorEmail.innerHTML = `<p>Provide email in format: <span class="form-span-message">contact<i class="fa-solid fa-at"></i>example.com</span></p>`;
+      disabled = true;
     }else{
       email.classList.add("accept");
       errorEmail.innerText ="";
     }
-  });
   
-  subject.addEventListener("change", () => {
     const errorSubject = document.getElementById("subject_error");
     if(!subject.value || subject.value.length < 15){
       subject.classList.add("error");
       subject.classList.remove("accept")
       errorSubject.innerHTML = `<p>Subject must contain at least 15 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
+      disabled = true;
     }else{
       subject.classList.add("accept");
       errorSubject.innerText="";
     }
-  });
-  
-  message.addEventListener("change", () => {
+
     const errorMessage = document.getElementById("message_error");
     if(!message.value.length || message.value.length < 25){
       message.classList.add("error");
       message.classList.remove("accept")
       errorMessage.innerHTML = `<p>Message must contain 25 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
+      disabled = true;
     }else{
       message.classList.add("accept");
       errorMessage.innerText="";
     }
-  });
-
-  submit.disabled = false;
+    return disabled;
 }
-form.addEventListener("input", contactFormValidation);
-submit.disabled = true;
-
-
 
 
 

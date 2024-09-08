@@ -530,6 +530,27 @@ label{
 .cta-send:hover{
   background-color: rgb(236, 229, 219);
 }
+.submit-success_container{
+  width: 100%;
+  height: 300px;
+  border: #18da63 5px solid;
+  border-radius: 5px;
+  color: #18da63;
+  padding: 25px;
+}
+.submit-success_text{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.submit-success_text-icon i{
+  font-size: var(--dk-font-headers-biggest);
+  color: #18da63;
+}
 
 
 
@@ -827,6 +848,10 @@ label{
   height: 50px;
   width: 300px;
 }
+.submit-success_container{
+  height: 200px;
+  padding: 50px;
+}
   /* ----- Posts In General-----*/ 
   .post_container{
     width: 376px;
@@ -973,6 +998,16 @@ label{
 }
 
 
+
+
+  /* ----- Contact Us Page -----*/
+.submit-success_container{
+  height: 380px;
+}
+.submit-success_text-icon i{
+  font-size: 5rem;
+  color: #18da63;
+}
   /* ----- About Us Page -----*/
   .about-img{
     width: 530px;

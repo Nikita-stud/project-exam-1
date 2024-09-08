@@ -3,12 +3,29 @@ const prevCta = document.getElementById("cta-last-post");
 const nextCta = document.getElementById("cta-next-post");
 const loadingContainer = document.getElementById("loading_container")
 
+const postOfficialWidth = function(){
+  const post = document.querySelector("#post-in-carousel");
+  return post.offsetWidth;
+}
+
 nextCta.addEventListener("click", function(){
-  carousel.scrollLeft += 225;
+  const postWidth = postOfficialWidth()
+  carousel.scrollLeft += postWidth ;
 })
 prevCta.addEventListener("click", function(){
-  carousel.scrollLeft -= 225;
+  const postWidth = postOfficialWidth()
+  carousel.scrollLeft -= postWidth;
 })
+function disableButtons(){
+  if(carousel.scrollLeft == 0){
+    prevCta.disabled=true;
+    prevCta.style.opacity =0.3;
+  }else if (carousel.scrollLeft > 0){
+    prevCta.disabled=false;
+    prevCta.style.opacity =1;
+  }
+}
+disableButtons()
 
 
 export function fetchCarousel(posts){
