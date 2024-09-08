@@ -242,7 +242,8 @@ nav ul li:hover{
 /* -----Posts General-----*/
 .post_container{
   position: relative;
-  width: 280px;
+  width: 100%;
+  max-width: 400px;
   height: 381px;
   padding: 25px;
   background-color: #fff;
@@ -686,8 +687,63 @@ label{
   margin-bottom: 20px;
 }
 
-
-
+/* ----- Skeletons Posts -----*/
+.loading{
+  background-color: var(--loading-color);
+  background: linear-gradient(
+    120deg,
+    rgba(240,240,240, 0) 45%,
+    rgba(240,240,240, .67) 55%,
+    rgba(240,240,240, 0) 65%
+  ) var(--loading-color);
+  background-size: 250%, 100%;
+  animation: 1.5s loading linear infinite ;
+}
+.loading-title{
+  width: 40%;
+  height: 20px;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+.loading-text:last-child{
+  width: 85%;
+  margin-bottom: 0px;
+}
+@keyframes loading {
+  0%{
+    background-position-x: 110% ;
+  }
+  100%{
+    background-position-x:0%;
+  }
+}
+.loading_container{
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+}
+.loading_post{
+  padding: 25px;
+  background-color: #fff;
+  width: 100%;
+  height: 350px;
+  margin-bottom: 15px ;
+}
+.loading_img{
+  width: 100%;
+  height: 150px;
+  margin-bottom: 25px;
+}
+.loading-text{
+  width: 100%;
+  height: 10px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
 
 
 
@@ -980,11 +1036,11 @@ label{
   grid-template-columns: repeat(auto-fit,minmax(376px, 1fr));
   gap: 25px;
 }
-
-
-
-
-
+/* ----- Skeletons Posts -----*/
+.loading_post{
+  max-width: 400px;
+  height: 380px;
+}
 
 
 
@@ -1077,7 +1133,7 @@ label{
   }
   .post_img{
     width: 100%;
-    height: 361px;
+    height: 321px;
     border-radius: 0px;
   }
   .post_title{
@@ -1085,7 +1141,7 @@ label{
     padding:4px 0;
   }
   .post_text{
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 8;
   }
   
 
@@ -1160,59 +1216,3 @@ label{
 
 
 /* ----- Animation-----*/
-.loading{
-  background-color: var(--loading-color);
-  background: linear-gradient(
-    120deg,
-    rgba(240,240,240, 0) 45%,
-    rgba(240,240,240, .67) 55%,
-    rgba(240,240,240, 0) 65%
-  ) var(--loading-color);
-  background-size: 250%, 100%;
-  animation: 1.5s loading linear infinite ;
-}
-.loading-title{
-  width: 40%;
-  height: 20px;
-  border-radius: 2px;
-  margin-bottom: 25px;
-}
-.loading_container{
-  padding: 25px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: center;
-
-  width: 100%;
-  height: 500px;
-}
-.loading_post{
-  padding: 25px;
-  background-color: #fff;
-  width: 250px;
-  height: 350px;
-}
-.loading_img{
-  width: 100%;
-  height: 150px;
-  margin-bottom: 25px;
-}
-.loading-text{
-  width: 100%;
-  height: 10px;
-  border-radius: 2px;
-  margin-bottom: 18px;
-}
-.loading-text:last-child{
-  width: 85%;
-  margin-bottom: 0px;
-}
-@keyframes loading {
-  0%{
-    background-position-x: 110% ;
-  }
-  100%{
-    background-position-x:0%;
-  }
-}
