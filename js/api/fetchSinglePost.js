@@ -8,6 +8,9 @@ export function fetchSinglePost(post){
     const renderedTitle = post.title.rendered.replace("&#8217;", "")
     title.innerText = renderedTitle;
     document.title = document.title + " " + renderedTitle;
+    const metaDescription = document.querySelector(`meta[name="description"]`);
+    metaDescription.setAttribute("content", `The specifics of post, ${renderedTitle}`);
+
 
     const mainImg = document.createElement("img");
     mainImg.classList.add("specifics-main-img");
