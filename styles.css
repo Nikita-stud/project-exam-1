@@ -1141,7 +1141,7 @@ label{
   bottom: 0;
   box-shadow: var(--box-shadow);
 }
-.cta-read-more-mobile:hover, .load-more-cta:hover, .all-posts-cta:hover, .cta-header:hover{
+.cta-read-more-mobile:hover, .load-more-cta:hover, .all-posts-cta:hover, .cta-header:hover, .cta-read-more-desktop:hover{
   background-color: rgb(233, 227, 217);
 }
 .all-posts-cta{

@@ -36,12 +36,19 @@ export function fetchPostOfToday(posts){
   const button = document.createElement("button");
   button.classList.add("cta-read-more-mobile");
   button.innerHTML =`Read More <i class="fa-solid fa-angle-right"></i>`;
-  button.addEventListener("click", function(){
+  button.addEventListener("click", redirectToSpecifics);
+
+  const desktopButton = document.createElement("button");
+  desktopButton.classList.add("cta-read-more-desktop");
+  desktopButton.innerText ="TODAYS POST";
+  desktopButton.addEventListener("click", redirectToSpecifics);
+
+  function redirectToSpecifics(){
     location.href = `specifics.html?id=${featuredFirstPost.id}`;
-  });
+  };
 
   container.append(title);
   container.append(text);
   container.append(button);
-
+  imgContainer.append(desktopButton);
 }
