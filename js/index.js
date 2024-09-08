@@ -8,6 +8,7 @@ import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 import { fetchCarousel } from "./api/fetchCarousel.js";
+import { skeletonsIndexPage } from "./ui/skeletonsIndexPage.js";
 
 async function index(){
   try{
@@ -21,7 +22,8 @@ async function index(){
     }
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", toggleHamburger);
-
+    
+    skeletonsIndexPage()
 
     const fetched = await fetch(fullLink);
     const results = await fetched.json();

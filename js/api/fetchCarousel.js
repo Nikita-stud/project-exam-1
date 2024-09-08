@@ -4,10 +4,10 @@ const nextCta = document.getElementById("cta-next-post");
 const loadingContainer = document.getElementById("loading_container");
 
 nextCta.addEventListener("click", function(){
-  carousel.scrollLeft += 380;
+  carousel.scrollLeft += 225;
 })
 prevCta.addEventListener("click", function(){
-  carousel.scrollLeft -= 380;
+  carousel.scrollLeft -= 225;
 })
 
 

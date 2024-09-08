@@ -14,7 +14,7 @@ async function displayListPage(){
   try{
     window.addEventListener("scroll", handleScroll);
     const screenWidth = window.matchMedia('(min-width: 834px)')
-    
+
     screenWidth.addEventListener("change", handleWidth)
     if(window.innerWidth > 834){
       handleWidth(screenWidth)
@@ -23,7 +23,6 @@ async function displayListPage(){
     hamburger.addEventListener("click", toggleHamburger);
 
     skeletonsListPage();
-
 
     const fetched = await fetch(addToUrl);
     const results = await fetched.json();
