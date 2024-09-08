@@ -906,10 +906,20 @@ label{
   width: 359px;
 }
 .search-icon{
+  padding: 10px 50px 9px 50px;
+  border: 2px solid var(--black);
+  border-radius: 2px;
+  background-color: var(--black);
   position: absolute;
-  top: 35%;
-  left: 30%;
+  top: 34.75%;
+  left: 62%;
   transform: translate(-50%, -50%);
+}
+.search-icon i {
+  color: var(--white);
+}
+.search-input{
+  padding-left: 20px;
 }
 
 [type="checkbox"] + label{
