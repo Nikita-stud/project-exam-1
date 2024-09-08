@@ -5,7 +5,7 @@ const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 const submit = document.getElementById("cta-send");
 
-export function handleFormValidation(event){
+export function contactFormValidation(event){
   event.preventDefault();
 
   name.addEventListener("change", () => {
@@ -29,7 +29,7 @@ export function handleFormValidation(event){
     if(!email.value || !validateMail(email.value)){
       email.classList.add("error");
       email.classList.remove("accept")
-      errorEmail.innerHTML = `<p>Provide email in format: contact<i class="fa-solid fa-at"></i>example.com</p>`;
+      errorEmail.innerHTML = `<p>Provide email in format: <span class="form-span-message">contact<i class="fa-solid fa-at"></i>example.com</span></p>`;
     }else{
       email.classList.add("accept");
       errorEmail.innerText ="";
@@ -62,7 +62,7 @@ export function handleFormValidation(event){
 
   submit.disabled = false;
 }
-form.addEventListener("input", handleFormValidation);
+form.addEventListener("input", contactFormValidation);
 submit.disabled = true;
 
 

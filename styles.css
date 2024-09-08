@@ -489,6 +489,8 @@ nav ul li:hover{
 }
 .form-span-message{
   color: #5b1616;;
+  display: inline;
+  white-space: nowrap;
 }
 /* .input:hover{
   border-bottom:  3px solid #072d2d;
@@ -505,6 +507,9 @@ label{
 }
 .email{
   max-width: 300px;
+}
+.email-error {
+  color: #d02424;
 }
 .subject{
   max-width: 350px;
