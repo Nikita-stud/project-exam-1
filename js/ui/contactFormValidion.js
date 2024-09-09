@@ -6,9 +6,8 @@ const message = document.getElementById("message");
 const submit = document.getElementById("cta-send");
 
 
-export function contactFormValidation(event){
-  // event.preventDefault()
-  const isDisabled = handleFormValidation()
+export function contactFormValidation(){
+  const isDisabled = handleFormValidation();
   submit.disabled = isDisabled;
 
   const textContainer = document.getElementById("form-contact_container");
@@ -20,7 +19,7 @@ export function contactFormValidation(event){
   })
 }
 form.addEventListener("input", contactFormValidation);
-
+form.event.preventDefault();
 
 function handleFormValidation(){
     let disabled = false;
@@ -29,7 +28,7 @@ function handleFormValidation(){
     if(!name.value || name.value.length <= 5){
       name.classList.add("error");
       name.classList.remove("accept")
-      errorName.innerText= "Name must contain at least 5 letters";
+      errorName.innerText= "Name must contain at least 6 letters";
       disabled = true;
     }else{
       name.classList.add("accept");
@@ -52,10 +51,10 @@ function handleFormValidation(){
     }
   
     const errorSubject = document.getElementById("subject_error");
-    if(!subject.value || subject.value.length < 15){
+    if(!subject.value || subject.value.length <= 15){
       subject.classList.add("error");
       subject.classList.remove("accept")
-      errorSubject.innerHTML = `<p>Subject must contain at least 15 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
+      errorSubject.innerHTML = `<p>Subject must contain at least 16 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
       disabled = true;
     }else{
       subject.classList.add("accept");
@@ -63,10 +62,10 @@ function handleFormValidation(){
     }
 
     const errorMessage = document.getElementById("message_error");
-    if(!message.value.length || message.value.length < 25){
+    if(!message.value.length || message.value.length <= 25){
       message.classList.add("error");
       message.classList.remove("accept")
-      errorMessage.innerHTML = `<p>Message must contain 25 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
+      errorMessage.innerHTML = `<p>Message must contain at least 26 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
       disabled = true;
     }else{
       message.classList.add("accept");
