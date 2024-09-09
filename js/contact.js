@@ -1,15 +1,14 @@
-import { catchAndDisplay } from "./ui/catchAndDisplay.js";
-import { contactFormValidation } from "./ui/contactFormValidion.js";
-
 import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
+import { contactFormValidation } from "./ui/contactFormValidion.js";
+import { catchAndDisplay } from "./ui/catchAndDisplay.js";
 
-async function index(){
+async function contactPage(){
   try{
     window.addEventListener("scroll", handleScroll);
     const screenWidth = window.matchMedia('(min-width: 834px)')
-    screenWidth.addEventListener("change", handleWidth)
+    screenWidth.addEventListener("change", handleWidth);
     if(window.innerWidth > 834){
       handleWidth(screenWidth)
     }
@@ -24,4 +23,4 @@ async function index(){
   }
 };
 
-index();
+contactPage();

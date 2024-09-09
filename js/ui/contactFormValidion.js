@@ -19,7 +19,7 @@ export function contactFormValidation(){
   })
 }
 form.addEventListener("input", contactFormValidation);
-form.event.preventDefault();
+form.preventDefault();
 
 function handleFormValidation(){
     let disabled = false;
