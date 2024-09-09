@@ -16,7 +16,7 @@ async function index(){
 
     window.addEventListener("scroll", handleScroll);
     const screenWidth = window.matchMedia('(min-width: 834px)')
-    screenWidth.addEventListener("change", handleWidth)
+    screenWidth.addEventListener("change", handleWidth);
     if(window.innerWidth > 834){
       handleWidth(screenWidth)
     }

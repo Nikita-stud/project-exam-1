@@ -1,4 +1,6 @@
-export function catchAndDisplay(container="message_container", message="There was an unexpected error", messageType="error"){
-  const inside = document.querySelector(container);
-  inside.innerHTML = `<div class="message ${messageType}">${message}</div>`;
+export function catchAndDisplay(message="There was an unexpected error, please try again later"){
+  const main = document.querySelector("main");
+  main.classList.add("errorOnPage");
+  main.innerHTML = "";
+  main.innerHTML = `<div>${message}</div>`;
 }

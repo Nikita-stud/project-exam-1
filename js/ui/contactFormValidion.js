@@ -7,7 +7,7 @@ const submit = document.getElementById("cta-send");
 
 
 export function contactFormValidation(event){
-  event.preventDefault()
+  // event.preventDefault()
   const isDisabled = handleFormValidation()
   submit.disabled = isDisabled;
 

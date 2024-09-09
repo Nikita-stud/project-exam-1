@@ -30,7 +30,7 @@ async function displayPost(){
     const results = await fetched.json();
     const post = results;
 
-    fetchSinglePost(post);
+    fetchSinglePost(post, screenWidth);
     enlargeOnClick();
 
   }catch(error){

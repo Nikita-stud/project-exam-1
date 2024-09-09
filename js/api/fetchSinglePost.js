@@ -1,7 +1,9 @@
 const mainContainer = document.getElementById("specifics-all_container");
 
-export function fetchSinglePost(post){
+export function fetchSinglePost(post, screenWidth){
     mainContainer.innerHTML = "";
+    const allTextDiv = document.createElement("div");
+    allTextDiv.classList.add("specifics-all-text");
 
     const title = document.createElement("h1");
     title.classList.add("specifics_title")
@@ -17,6 +19,7 @@ export function fetchSinglePost(post){
     const mediaImg = post._embedded[`wp:featuredmedia`][0];
     mainImg.src = `${mediaImg.media_details.sizes.full.source_url}`;
     mainImg.alt = `${mediaImg.alt_text}`;
+    title.appendChild(mainImg);
 
     const textDiv = document.createElement("div");
     textDiv.classList.add("specifics-text_container")
@@ -36,9 +39,9 @@ export function fetchSinglePost(post){
         img.alt ="Image of one of the landscapes in the country";
         smallImgContainer.appendChild(img);
     });
-    headers[2].appendChild(smallImgContainer)
+    headers[4].appendChild(smallImgContainer)
 
-    mainContainer.append(title);
-    mainContainer.append(mainImg);
-    mainContainer.append(textDiv);
+    allTextDiv.append(title);
+    allTextDiv.append(textDiv);
+    mainContainer.append(allTextDiv);
 }

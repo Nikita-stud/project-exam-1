@@ -5,7 +5,7 @@ const oldestToNewestButton = document.getElementById("oldest-to-newest");
 export function filterPosts(posts, callback){
   let filteredPosts = posts;
 
-  search.addEventListener("keyup", (event) =>{
+  search.addEventListener("input", (event) =>{
     const messageLength = event.target.value.trim().toLowerCase();
 
     filteredPosts = posts.filter(function(post){
