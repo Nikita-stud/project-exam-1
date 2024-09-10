@@ -5,7 +5,7 @@ const loadingContainer = document.getElementById("loading_container")
 
 const postOfficialWidth = function(){
   const post = document.querySelector("#carousel-li");
-  return post.offsetWidth +25;
+  return post.offsetWidth +27;
 }
 
 nextCta.addEventListener("click", function(){
