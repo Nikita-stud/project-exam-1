@@ -257,6 +257,9 @@ nav ul li:hover{
 .carousel-post_container{
   min-width: 350px;
 }
+#carousel-li{
+  transition: transform 0.5s ease-in-out;
+}
 .post_container:hover, .carousel-post_container:hover{
   cursor: pointer;
   background-color: #f6f6f6;
