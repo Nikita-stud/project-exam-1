@@ -5,10 +5,14 @@ const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 const submit = document.getElementById("cta-send");
 
+const errorName = document.getElementById("name_error");
+const errorEmail = document.getElementById("email_error");
+const errorSubject = document.getElementById("subject_error");
+const errorMessage = document.getElementById("message_error");
+
+const textContainer = document.getElementById("form-contact_container");
 
 export function contactFormValidation(){
-  const textContainer = document.getElementById("form-contact_container");
-
   submit.addEventListener("click", ()=>{
     textContainer.innerHTML= `<div class="submit-success_container">
                                  <p class="submit-success_text"><span class="submit-success_text-icon"><i class="fa-solid fa-circle-check"></i></span>Thank you for submiting your question or inquirie, we will answer as fast as we can!</p>
@@ -21,49 +25,43 @@ form.addEventListener("input", (event)=>{
 
   let disabled = true;
 
-  const errorName = document.getElementById("name_error");
-  if(!name.value || name.value.length <= 5){
-    name.classList.add("error");
-    name.classList.remove("accept")
-    errorName.innerText= "Name must contain at least 6 letters";
+  function displayError(input){
+    input.classList.add("error");
+    input.classList.remove("accept")
     disabled = false;
+  }
+  function validateMail(email){
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    return re.test(String(email).toLowerCase());
+  }
+
+  if(!name.value || name.value.length <= 5){
+    displayError(name);
+    errorName.innerText= "Name must contain at least 6 letters";
   }else{
     name.classList.add("accept");
     errorName.innerText =""
   }
 
-  const errorEmail = document.getElementById("email_error");
-  function validateMail(email){
-    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    return re.test(String(email).toLowerCase());
-  }
   if(!email.value || !validateMail(email.value)){
-    email.classList.add("error");
-    email.classList.remove("accept")
+    displayError(email);
     errorEmail.innerHTML = `<p>Provide email in format: <span class="form-span-message">contact<i class="fa-solid fa-at"></i>example.com</span></p>`;
-    disabled = false;
   }else{
     email.classList.add("accept");
     errorEmail.innerText ="";
   }
 
-  const errorSubject = document.getElementById("subject_error");
   if(!subject.value || subject.value.length <= 15){
-    subject.classList.add("error");
-    subject.classList.remove("accept")
+    displayError(subject);
     errorSubject.innerHTML = `<p>Subject must contain at least 16 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
-    disabled = false;
   }else{
     subject.classList.add("accept");
     errorSubject.innerText="";
   }
 
-  const errorMessage = document.getElementById("message_error");
   if(!message.value.length || message.value.length <= 25){
-    message.classList.add("error");
-    message.classList.remove("accept")
+    displayError(message);
     errorMessage.innerHTML = `<p>Message must contain at least 26 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
-    disabled = false;
   }else{
     message.classList.add("accept");
     errorMessage.innerText="";
@@ -126,4 +124,3 @@ form.addEventListener("input", (event)=>{
 //     break;
 //   }
 // }
-// event.preventDefault();
