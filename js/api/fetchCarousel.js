@@ -1,4 +1,4 @@
-const carousel =document.getElementById("carousel_container");
+const carouselUlList =document.getElementById("carousel-unordered");
 const prevCta = document.getElementById("cta-last-post");
 const nextCta = document.getElementById("cta-next-post");
 const loadingContainer = document.getElementById("loading_container")
@@ -10,22 +10,12 @@ const postOfficialWidth = function(){
 
 nextCta.addEventListener("click", function(){
   const postWidth = postOfficialWidth()
-  carousel.scrollLeft += postWidth ;
+  carouselUlList.scrollLeft += postWidth ;
 })
 prevCta.addEventListener("click", function(){
   const postWidth = postOfficialWidth()
-  carousel.scrollLeft -= postWidth;
+  carouselUlList.scrollLeft -= postWidth;
 })
-function disableButtons(){
-  if(carousel.scrollLeft == 0){
-    prevCta.disabled=true;
-    prevCta.style.opacity =0.3;
-  }else if (carousel.scrollLeft > 0){
-    prevCta.disabled=false;
-    prevCta.style.opacity =1;
-  }
-}
-disableButtons()
 
 
 export function fetchCarousel(posts){
@@ -35,12 +25,14 @@ export function fetchCarousel(posts){
   const limitTodaysPosts = newestPosts.slice(0, 5);
 
   const createPosts = (post) =>{
+    const unorderedList =document.createElement("li");
+
     const anchorTag = document.createElement("a");
     anchorTag.href =`specifics.html?id=${post.id}`;
     anchorTag.setAttribute("id", "post-in-carousel");
 
     const div = document.createElement("div");
-    div.classList.add("post_container");
+    div.classList.add("carousel-post_container");
 
     const img = document.createElement("img");
     img.classList.add("post_img");
@@ -68,19 +60,19 @@ export function fetchCarousel(posts){
     const readMore = document.createElement("p");
     readMore.classList.add("post-read-more");
     readMore.innerHTML = `Read More <i class="fa-solid fa-arrow-right"></i>`;
-     
 
+    unorderedList.append(anchorTag);
     anchorTag.append(div);
     div.append(img);
     div.append(title);
     div.append(p);
     div.append(readMore);
 
-    return anchorTag;
+    return unorderedList;
   }
 
   limitTodaysPosts.forEach(post =>{
-    carousel.appendChild(createPosts(post))
+    carouselUlList.appendChild(createPosts(post))
   });
   
 }
