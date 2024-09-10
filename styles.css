@@ -601,6 +601,7 @@ label{
   font-size: var(--mb-font-headers-biggest);
 }
 .specifics-main-img{
+  cursor: pointer;
   padding-top: 25px;
   width: 100%;
   background-position: center;
@@ -609,6 +610,7 @@ label{
   box-shadow: none;
 }
 .specifics-other-img_container{
+  cursor: pointer;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
