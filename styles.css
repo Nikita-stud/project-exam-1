@@ -369,7 +369,7 @@ nav ul li:hover{
   padding: 0 25px;
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
-  gap: 12px;
+  gap: 25px;
   place-items: center;
 }
 .all-posts-cta_container{
@@ -1061,7 +1061,6 @@ label{
 .all-posts_container{
   padding: 0 50px;
   grid-template-columns: repeat(auto-fit,minmax(376px, 1fr));
-  gap: 25px;
 }
 /* ----- Skeletons Posts -----*/
 .loading_post{
