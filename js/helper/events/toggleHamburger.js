@@ -1,4 +1,4 @@
-const navItem = document.querySelectorAll(".navItem");
+// const navItem = document.querySelectorAll(".navItem");
 const nav = document.getElementById("header_nav");
 const closedIcon = document.querySelector(".icon-close");
 const hamburgerIcon = document.querySelector(".icon-hamburger")
@@ -12,11 +12,19 @@ export function toggleHamburger(){
     nav.classList.add("showMenu");
     closedIcon.style.display ="block";
     hamburgerIcon.style.display = "none"
+
+    // document.addEventListener("click", (event)=>{
+    //   if(!hamburgerIcon.contains(event.target)){
+    //     nav.classList.remove("showMenu");
+    //     closedIcon.style.display ="none";
+    //     hamburgerIcon.style.display = "block"
+    //   }
+    // })
   }
 }
 
-navItem.forEach(
-  function(item){
-    item.addEventListener("click",toggleHamburger);
-  }
-)
+// navItem.forEach(
+//   function(item){
+//     item.addEventListener("click",toggleHamburger);
+//   }
+// )
