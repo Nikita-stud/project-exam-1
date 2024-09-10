@@ -4,8 +4,8 @@ const nextCta = document.getElementById("cta-next-post");
 const loadingContainer = document.getElementById("loading_container")
 
 const postOfficialWidth = function(){
-  const post = document.querySelector("#post-in-carousel");
-  return post.offsetWidth;
+  const post = document.querySelector("#carousel-li");
+  return post.offsetWidth +25;
 }
 
 nextCta.addEventListener("click", function(){
@@ -26,6 +26,7 @@ export function fetchCarousel(posts){
 
   const createPosts = (post) =>{
     const unorderedList =document.createElement("li");
+    unorderedList.setAttribute("id","carousel-li")
 
     const anchorTag = document.createElement("a");
     anchorTag.href =`specifics.html?id=${post.id}`;
