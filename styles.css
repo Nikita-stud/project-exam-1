@@ -251,6 +251,7 @@ nav ul li:hover{
   color: var(--black);
   border-radius: 2px;
 }
+
 .carousel-post_container{
   min-width: 350px;
 }

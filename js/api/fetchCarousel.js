@@ -74,5 +74,4 @@ export function fetchCarousel(posts){
   limitTodaysPosts.forEach(post =>{
     carouselUlList.appendChild(createPosts(post))
   });
-  
 }
