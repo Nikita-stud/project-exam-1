@@ -299,7 +299,7 @@ nav ul li:hover{
   position: absolute;
   bottom: 20px;
   right: 25px;
-  padding-top: 6px;
+  padding-top: 8px;
 }
 .post-read-more:hover{
   text-decoration: underline;
