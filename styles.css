@@ -185,14 +185,16 @@ nav ul li:hover{
 .text{
   font-family: var(--font-readable);
   font-size: var(--mb-font-text);
-  padding: 10px 0;
+  padding: 10px 0 0 0 ;
   max-height: 400px;
-  text-overflow: ellipsis;
-  white-space: normal;
-  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 17;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: normal;
+
+
 }
 .cta-read-more-desktop{
   display: none;
@@ -868,7 +870,6 @@ label{
 }
 .text{
   font-size: var(--mb-font-text);
-  padding: 18px 0;
   max-height: 335px;  
 }
 .cta-read-more-mobile{
@@ -1167,6 +1168,8 @@ label{
 }
 .text{
   font-size: var(--dk-font-text);
+  -webkit-line-clamp: 12;
+  padding: 18px 0;
   height: 308px;
 }
 .cta-read-more-desktop{
