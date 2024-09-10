@@ -55,6 +55,9 @@ i, button{
 .display-none{
   display: none;
 }
+:disabled{
+  opacity: 0.4;
+}
 
 /* ----- Header -----*/
 header{

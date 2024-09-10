@@ -18,7 +18,6 @@ async function contactPage(){
     contactFormValidation();
 
   }catch(error){
-    console.log(error)
     catchAndDisplay()
   }
 };

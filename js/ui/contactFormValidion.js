@@ -7,9 +7,6 @@ const submit = document.getElementById("cta-send");
 
 
 export function contactFormValidation(){
-  const isDisabled = handleFormValidation();
-  submit.disabled = isDisabled;
-
   const textContainer = document.getElementById("form-contact_container");
 
   submit.addEventListener("click", ()=>{
@@ -18,61 +15,66 @@ export function contactFormValidation(){
                               </div>`;
   })
 }
-form.addEventListener("input", contactFormValidation);
-form.preventDefault();
 
-function handleFormValidation(){
-    let disabled = false;
+form.addEventListener("input", (event)=>{
+  event.preventDefault();
 
-    const errorName = document.getElementById("name_error");
-    if(!name.value || name.value.length <= 5){
-      name.classList.add("error");
-      name.classList.remove("accept")
-      errorName.innerText= "Name must contain at least 6 letters";
-      disabled = true;
-    }else{
-      name.classList.add("accept");
-      errorName.innerText =""
-    }
-  
-    const errorEmail = document.getElementById("email_error");
-    function validateMail(email){
-      const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-      return re.test(String(email).toLowerCase());
-    }
-    if(!email.value || !validateMail(email.value)){
-      email.classList.add("error");
-      email.classList.remove("accept")
-      errorEmail.innerHTML = `<p>Provide email in format: <span class="form-span-message">contact<i class="fa-solid fa-at"></i>example.com</span></p>`;
-      disabled = true;
-    }else{
-      email.classList.add("accept");
-      errorEmail.innerText ="";
-    }
-  
-    const errorSubject = document.getElementById("subject_error");
-    if(!subject.value || subject.value.length <= 15){
-      subject.classList.add("error");
-      subject.classList.remove("accept")
-      errorSubject.innerHTML = `<p>Subject must contain at least 16 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
-      disabled = true;
-    }else{
-      subject.classList.add("accept");
-      errorSubject.innerText="";
-    }
+  let disabled = true;
 
-    const errorMessage = document.getElementById("message_error");
-    if(!message.value.length || message.value.length <= 25){
-      message.classList.add("error");
-      message.classList.remove("accept")
-      errorMessage.innerHTML = `<p>Message must contain at least 26 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
-      disabled = true;
-    }else{
-      message.classList.add("accept");
-      errorMessage.innerText="";
-    }
-    return disabled;
-}
+  const errorName = document.getElementById("name_error");
+  if(!name.value || name.value.length <= 5){
+    name.classList.add("error");
+    name.classList.remove("accept")
+    errorName.innerText= "Name must contain at least 6 letters";
+    disabled = false;
+  }else{
+    name.classList.add("accept");
+    errorName.innerText =""
+  }
+
+  const errorEmail = document.getElementById("email_error");
+  function validateMail(email){
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    return re.test(String(email).toLowerCase());
+  }
+  if(!email.value || !validateMail(email.value)){
+    email.classList.add("error");
+    email.classList.remove("accept")
+    errorEmail.innerHTML = `<p>Provide email in format: <span class="form-span-message">contact<i class="fa-solid fa-at"></i>example.com</span></p>`;
+    disabled = false;
+  }else{
+    email.classList.add("accept");
+    errorEmail.innerText ="";
+  }
+
+  const errorSubject = document.getElementById("subject_error");
+  if(!subject.value || subject.value.length <= 15){
+    subject.classList.add("error");
+    subject.classList.remove("accept")
+    errorSubject.innerHTML = `<p>Subject must contain at least 16 letters!<span class="form-span-message"> Currently: ${subject.value.length}</span></p>`;
+    disabled = false;
+  }else{
+    subject.classList.add("accept");
+    errorSubject.innerText="";
+  }
+
+  const errorMessage = document.getElementById("message_error");
+  if(!message.value.length || message.value.length <= 25){
+    message.classList.add("error");
+    message.classList.remove("accept")
+    errorMessage.innerHTML = `<p>Message must contain at least 26 letters! <span class="form-span-message"> Currently: ${message.value.length}</span></p>`;
+    disabled = false;
+  }else{
+    message.classList.add("accept");
+    errorMessage.innerText="";
+  }
+
+  if(disabled){
+    submit.disabled = false;
+    contactFormValidation();
+  }
+
+});
 
 
 
