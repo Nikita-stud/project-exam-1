@@ -1041,18 +1041,22 @@ label{
 .checkbox_container{
   float: left;
 }
+.search_container{
+  position: relative;
+}
 .search-input{
   width: 359px;
 }
 .search-icon{
+  position: absolute;
+  opacity: 1;
   padding: 10px 50px 9px 50px;
   border: 2px solid var(--black);
   border-radius: 2px;
   background-color: var(--black);
-  position: absolute;
-  cursor: pointer;
-  top: 34.75%;
-  left: 62%;
+  cursor:default;
+  top: 23.5px;
+  left: 70%;
   transform: translate(-50%, -50%);
 }
 .search-icon i {
