@@ -29,8 +29,6 @@ async function displayListPage(){
     const results = await fetched.json();
     const posts = results;
 
-    // loadMoreButton.style.display = posts.length < 10 ? "none" : "block";
-
     fetchListOfPosts(posts);
     filterPosts(posts, (filteredPosts) =>{
       fetchListOfPosts(filteredPosts);
@@ -44,7 +42,7 @@ async function displayListPage(){
 displayListPage();
 
 
-async function loadMorePosts(){
+function loadMorePosts(){
   try{
     loadMoreButton.addEventListener("click",async()=>{
        let urlPostAmount = addToUrl.charAt(addToUrl.length-2) + addToUrl.charAt(addToUrl.length-1);

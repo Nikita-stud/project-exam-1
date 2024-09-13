@@ -1,4 +1,5 @@
 const container = document.getElementById("all-posts_container");
+const loadMoreButton = document.getElementById("load-more-cta")
 
 export function fetchListOfPosts(filteredPosts){
   container.innerHTML="";
@@ -8,6 +9,7 @@ export function fetchListOfPosts(filteredPosts){
      container.innerHTML = `<div class="nothing-found_container">
                               <p>Please ensure that you type in the first letter of a post for best results!</p>
                            </div>`;
+    loadMoreButton.style.display = filteredPosts.length < 10 ? "none" : "block";
    }
 
   filteredPosts.forEach(post => {
