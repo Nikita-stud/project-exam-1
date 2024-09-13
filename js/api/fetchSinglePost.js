@@ -1,6 +1,6 @@
 const mainContainer = document.getElementById("specifics-all_container");
 
-export function fetchSinglePost(post, screenWidth){
+export function fetchSinglePost(post){
     mainContainer.innerHTML = "";
     const allTextDiv = document.createElement("div");
     allTextDiv.classList.add("specifics-all-text");
