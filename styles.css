@@ -1082,6 +1082,15 @@ label{
   padding: 0 50px;
   grid-template-columns: repeat(auto-fit,minmax(376px, 1fr));
 }
+.nothing-found_container{
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--black);
+  height: 200px;
+  min-width: 300px;
+}
 /* ----- Skeletons Posts -----*/
 .loading_post{
   max-width: 400px;
