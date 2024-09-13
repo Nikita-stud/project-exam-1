@@ -398,6 +398,15 @@ nav ul li:hover{
   font-size: var(--mb-font-headers);
   cursor: pointer;
 }
+.nothing-found_container{
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--black);
+  height: 250px;
+  width: 100%;
+}
 /* ----- Footer -----*/
 .footer_container{
   box-shadow: 0px -18px 10px -20px rgba(0,0,0,0.5);
@@ -1081,15 +1090,6 @@ label{
 .all-posts_container{
   padding: 0 50px;
   grid-template-columns: repeat(auto-fit,minmax(376px, 1fr));
-}
-.nothing-found_container{
-  padding: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid var(--black);
-  height: 200px;
-  min-width: 300px;
 }
 /* ----- Skeletons Posts -----*/
 .loading_post{
