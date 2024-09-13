@@ -1,7 +1,16 @@
 const mainContainer = document.getElementById("specifics-all_container");
 
 export function fetchSinglePost(post){
+
     mainContainer.innerHTML = "";
+
+    const mainImg = document.createElement("img");
+    mainImg.classList.add("specifics-main-img");
+    const mediaImg = post._embedded[`wp:featuredmedia`][0];
+    mainImg.src = `${mediaImg.media_details.sizes.full.source_url}`;
+    mainImg.alt = `${mediaImg.alt_text}`;
+    mainContainer.appendChild(mainImg);
+
     const allTextDiv = document.createElement("div");
     allTextDiv.classList.add("specifics-all-text");
 
@@ -12,14 +21,6 @@ export function fetchSinglePost(post){
     document.title = document.title + " " + renderedTitle;
     const metaDescription = document.querySelector(`meta[name="description"]`);
     metaDescription.setAttribute("content", `The specifics of post, ${renderedTitle}`);
-
-
-    const mainImg = document.createElement("img");
-    mainImg.classList.add("specifics-main-img");
-    const mediaImg = post._embedded[`wp:featuredmedia`][0];
-    mainImg.src = `${mediaImg.media_details.sizes.full.source_url}`;
-    mainImg.alt = `${mediaImg.alt_text}`;
-    title.appendChild(mainImg);
 
     const textDiv = document.createElement("div");
     textDiv.classList.add("specifics-text_container")
