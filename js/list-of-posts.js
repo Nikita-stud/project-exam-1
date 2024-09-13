@@ -9,6 +9,7 @@ import { handleScroll } from "./helper/events/handleScroll.js";
 import { handleWidth } from "./helper/events/handleWidth.js";
 import { toggleHamburger } from "./helper/events/toggleHamburger.js";
 import { skeletonsListPage } from "./ui/skeletonsListPage.js";
+const loadMoreButton = document.getElementById("load-more-cta");
 
 async function displayListPage(){
   try{
@@ -28,6 +29,8 @@ async function displayListPage(){
     const results = await fetched.json();
     const posts = results;
 
+    // loadMoreButton.style.display = posts.length < 10 ? "none" : "block";
+
     fetchListOfPosts(posts);
     filterPosts(posts, (filteredPosts) =>{
       fetchListOfPosts(filteredPosts);
@@ -41,10 +44,8 @@ async function displayListPage(){
 displayListPage();
 
 
-function loadMorePosts(){
+async function loadMorePosts(){
   try{
-    const loadMoreButton = document.getElementById("load-more-cta");
-
     loadMoreButton.addEventListener("click",async()=>{
        let urlPostAmount = addToUrl.charAt(addToUrl.length-2) + addToUrl.charAt(addToUrl.length-1);
        let finalNumber = +urlPostAmount + +10;
@@ -54,9 +55,8 @@ function loadMorePosts(){
        const results = await fetched.json();
        const posts = results;
 
-       if(posts.length < finalNumber){
-        loadMoreButton.style.display = "none";
-       }
+       loadMoreButton.style.display = posts.length < finalNumber ? "none" : "block";
+
 
       fetchListOfPosts(posts)
       filterPosts(posts, (filteredPosts) =>{

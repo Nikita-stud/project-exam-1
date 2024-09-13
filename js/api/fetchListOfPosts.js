@@ -1,16 +1,14 @@
 const container = document.getElementById("all-posts_container");
-const loadMoreButton = document.getElementById("load-more-cta");
 
 export function fetchListOfPosts(filteredPosts){
   container.innerHTML="";
 
-  loadMoreButton.style.display = filteredPosts.length < 10 ? "none" : "block";
-
   if(filteredPosts.length == 0){
-    container.innerHTML = `<div class="nothing-found_container">
-                             <p>Please ensure that you type in the first letter of a post for best results!</p>
-                          </div>`;
-  }
+    const container = document.getElementById("all-posts_container");
+     container.innerHTML = `<div class="nothing-found_container">
+                              <p>Please ensure that you type in the first letter of a post for best results!</p>
+                           </div>`;
+   }
 
   filteredPosts.forEach(post => {
     const anchorTag = document.createElement("a");
