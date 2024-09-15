@@ -5,9 +5,12 @@ $email = $_GET["email"];
 $subject = $_GET["subject"];
 $message = $_GET["message"];
 
-$to = "nikita151998de@gmail.com";
+$to = "dev-email@wpengine.local";
 
-$messageToSend = "From $name at $email about $subject with the Inquiry: $message"
+$messageToSend = "From $name at $email about $subject with the Inquiry: $message";
+
+
+//Did not install Ubuntu for mail()
 
 if(mail($to, $subject, $messageToSend)){
   echo "Email sent successfully";
