@@ -5,7 +5,7 @@ $email = $_POST["email"];
 $subject = $_POST["subject"];
 $message = $_POST["message"];
 
-$to = "dev-email@wpengine.local";
+$to = "nikita151998de@gmail.com";
 
 $messageToSend = "From $name at $email about $subject with the Inquiry: $message"
 
