@@ -1,9 +1,9 @@
 <?php
 
-$name = $_GET["name"];
-$email = $_GET["email"];
-$subject = $_GET["subject"];
-$message = $_GET["message"];
+$name = $_POST["name"];
+$email = $_POST["email"];
+$subject = $_POST["subject"];
+$message = $_POST["message"];
 
 $to = "dev-email@wpengine.local";
 
