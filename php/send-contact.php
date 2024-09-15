@@ -11,6 +11,8 @@ $messageToSend = "From $name at $email about $subject with the Inquiry: $message
 
 if(mail($to, $subject, $messageToSend)){
   echo "Email sent successfully";
+}else{
+  echo "Mail not sent";
 }
 
 
