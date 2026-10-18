@@ -21,19 +21,19 @@ export function fetchListOfPosts(filteredPosts){
 
     const img = document.createElement("img");
     img.classList.add("post_img");
-    const mediaImg = post._embedded[`wp:featuredmedia`][0];
-    img.src = `${mediaImg.media_details.sizes.full.source_url}`;
-    img.alt = `${mediaImg.alt_text}`;
+    const mediaImg = post.media[0];
+    img.src = `${mediaImg.url}`;
+    img.alt = `${mediaImg.alt}`;
 
     const title = document.createElement("h5");
     title.classList.add("post_title")
-    const renderedTitle = post.title.rendered.replace("&#8217;", "")
+    const renderedTitle = post.name
     title.innerText = renderedTitle;
 
     const p = document.createElement("p");
     p.classList.add("post_text")
     const tempContainer = document.createElement("div");
-    tempContainer.innerHTML = post.content.rendered;
+    tempContainer.innerHTML = post.description;
     const allText = tempContainer.querySelectorAll("p")
     let paragraphs = "";
   

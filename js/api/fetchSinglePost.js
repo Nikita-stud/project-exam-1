@@ -6,9 +6,9 @@ export function fetchSinglePost(post){
 
     const mainImg = document.createElement("img");
     mainImg.classList.add("specifics-main-img");
-    const mediaImg = post._embedded[`wp:featuredmedia`][0];
-    mainImg.src = `${mediaImg.media_details.sizes.full.source_url}`;
-    mainImg.alt = `${mediaImg.alt_text}`;
+    const mediaImg = post.media[0];
+    mainImg.src = `${mediaImg.url}`;
+    mainImg.alt = `${mediaImg.alt}`;
     mainContainer.appendChild(mainImg);
 
     const allTextDiv = document.createElement("div");
@@ -16,7 +16,7 @@ export function fetchSinglePost(post){
 
     const title = document.createElement("h1");
     title.classList.add("specifics_title")
-    const renderedTitle = post.title.rendered.replace("&#8217;", "")
+    const renderedTitle = post.name
     title.innerText = renderedTitle;
     document.title = document.title + " " + renderedTitle;
     const metaDescription = document.querySelector(`meta[name="description"]`);
@@ -25,13 +25,13 @@ export function fetchSinglePost(post){
     const textDiv = document.createElement("div");
     textDiv.classList.add("specifics-text_container")
     const tempContainer = document.createElement("div");
-    tempContainer.innerHTML = post.content.rendered;
+    tempContainer.innerHTML = post.description;
     const renderedText = tempContainer.innerHTML.replace(/<(?!h2|h3|h4|h5|h6|p|li|br)[^>]*\>/g,'');
     textDiv.innerHTML = renderedText;
 
     const smallImgContainer = document.createElement("div");
     smallImgContainer.classList.add("specifics-other-img_container");
-    const renderedImgs = tempContainer.querySelectorAll("img");
+    const renderedImgs = post.media.slice(1).map(mediaImg => Object.assign(document.createElement("img"), { src: mediaImg.url }));
     let convertedNode = Array.from(renderedImgs);
     const headers = textDiv.querySelectorAll("h3");
 
@@ -40,7 +40,7 @@ export function fetchSinglePost(post){
         img.alt ="Image of one of the landscapes in the country";
         smallImgContainer.appendChild(img);
     });
-    headers[4].appendChild(smallImgContainer)
+    textDiv.append(smallImgContainer)
 
     allTextDiv.append(title);
     allTextDiv.append(textDiv);

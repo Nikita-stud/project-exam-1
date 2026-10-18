@@ -1,5 +1,5 @@
 import { url } from "./constants/constant.js";
-const newUrl = url + "&page=1&per_page=10";
+const newUrl = url + "?sort=created&sortOrder=desc&page=1&limit=10";
 let addToUrl = newUrl;
 
 import { catchAndDisplay } from "./ui/catchAndDisplay.js";
@@ -27,7 +27,7 @@ async function displayListPage(){
 
     const fetched = await fetch(addToUrl);
     const results = await fetched.json();
-    const posts = results;
+    const posts = results.data.filter(post=> post.media.length > 0);
 
     fetchListOfPosts(posts);
     filterPosts(posts, (filteredPosts) =>{
@@ -51,7 +51,7 @@ function loadMorePosts(){
 
        const fetched = await fetch(addToUrl);
        const results = await fetched.json();
-       const posts = results;
+       const posts = results.data.filter(post=> post.media.length > 0);
 
        loadMoreButton.style.display = posts.length < finalNumber ? "none" : "block";
 

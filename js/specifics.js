@@ -28,7 +28,7 @@ async function displayPost(){
 
     const fetched = await fetch(postUrl);
     const results = await fetched.json();
-    const post = results;
+    const post = results.data;
 
     fetchSinglePost(post);
     enlargeOnClick();

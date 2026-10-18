@@ -1,1 +1,1 @@
-export const url = "https://cors.noroff.dev/https://flower-power.one/cms/wp-json/wp/v2/posts/?_embed";
+export const url = "https://v2.api.noroff.dev/holidaze/venues";

@@ -4,26 +4,26 @@ const container = document.getElementById("post-of-today_text-container");
 export function fetchPostOfToday(posts){
   
   const featuredArray = posts.filter(post=>
-  post.class_list.includes("tag-post-of-the-day" && "category-post-of-the-day")
+  post.rating == 5
   );
   const featuredFirstPost= featuredArray.shift();
 
   container.innerHTML = "";
   imgContainer.classList.remove("loading")
 
-  const featuredMediaImg = featuredFirstPost._embedded[`wp:featuredmedia`][0];
-  imgContainer.style.backgroundImage = `url(${featuredMediaImg.media_details.sizes.full.source_url})`;
-  imgContainer.alt = `${featuredMediaImg.alt_text}`;
+  const featuredMediaImg = featuredFirstPost.media[0];
+  imgContainer.style.backgroundImage = `url(${featuredMediaImg.url})`;
+  imgContainer.alt = `${featuredMediaImg.alt}`;
 
   const title = document.createElement("h2");
   title.classList.add("post-of-today_title")
-  title.innerText =`${featuredFirstPost.title.rendered}`;
+  title.innerText =`${featuredFirstPost.name}`;
 
 
   const text = document.createElement("p");
   text.classList.add("text")
   const tempContainer = document.createElement("div");
-  tempContainer.innerHTML = featuredFirstPost.content.rendered;
+  tempContainer.innerHTML = featuredFirstPost.description;
   const allText = tempContainer.querySelectorAll("p")
   let paragraphs = "";
 

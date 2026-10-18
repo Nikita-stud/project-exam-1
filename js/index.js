@@ -12,7 +12,7 @@ import { skeletonsIndexPage } from "./ui/skeletonsIndexPage.js";
 
 async function index(){
   try{
-    const fullLink = url + "&per_page=20";
+    const fullLink = url + "?sort=created&sortOrder=desc&limit=100";
 
     window.addEventListener("scroll", handleScroll);
     const screenWidth = window.matchMedia('(min-width: 834px)')
@@ -27,7 +27,7 @@ async function index(){
 
     const fetched = await fetch(fullLink);
     const results = await fetched.json();
-    const posts = results;
+    const posts = results.data.filter(post=> post.media.length > 0);
 
     fetchPostOfToday(posts);
     fetchCarousel(posts);
@@ -42,7 +42,6 @@ async function index(){
 index();
 
 
-/*------ hamburger,logo  and nav are intertwined in these functions below----*/ 
 
 
 

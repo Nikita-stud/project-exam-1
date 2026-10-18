@@ -9,7 +9,7 @@ export function filterPosts(posts, callback){
     const messageLength = event.target.value.trim().toLowerCase();
 
     filteredPosts = posts.filter(function(post){
-      const filteredTitle = post.title.rendered.replace("&#8217", "")
+      const filteredTitle = post.name
       return filteredTitle.toLowerCase().startsWith(messageLength)
     });
     if(newestToOldestButton.checked){
